@@ -1,0 +1,44 @@
+{
+  "acly-inpaint": {
+    "owner": "Acly",
+    "repo": "comfyui-inpaint-nodes",
+    "fetchSubmodules": false,
+    "rev": "717cb7717daf9f10979940163f708e35ee8eda05",
+    "hash": "sha256-tNMm7KWaKSEGvbCX0apIBFHeUjIQ/EG7Ra/8UUWuSTI="
+  },
+  "acly-tooling": {
+    "owner": "Acly",
+    "repo": "comfyui-tooling-nodes",
+    "fetchSubmodules": false,
+    "rev": "9d533984c2b44bc0519fde2875b976493c6e90a0",
+    "hash": "sha256-y6mIYMzd8tQm/JELfGltF30vWUSTugaMTfCh5ZZrP9g="
+  },
+  "comfyui": {
+    "owner": "comfyanonymous",
+    "repo": "ComfyUI",
+    "fetchSubmodules": false,
+    "rev": "24b969d3dace581ed3fb547eedfbdf502ad0f7e9",
+    "hash": "sha256-ExEM7KGtgY9ruU4kW2O6s0uokXE05lUsPRnscoeZ2V0="
+  },
+  "cubiq-ipadapter-plus": {
+    "owner": "cubiq",
+    "repo": "ComfyUI_IPAdapter_plus",
+    "fetchSubmodules": false,
+    "rev": "8208e27bf10e9b5b36546dd64c4b820b168c2724",
+    "hash": "sha256-00/8MhCZjUL17NSwOmsoZ4naTKSU48bLGiwuJ21t7/U="
+  },
+  "fannovel16-controlnet-aux": {
+    "owner": "Fannovel16",
+    "repo": "comfyui_controlnet_aux",
+    "fetchSubmodules": false,
+    "rev": "6f1ba1c10df84af6d356119ccf4ebcf796a10e1c",
+    "hash": "sha256-IapmOgCha9iYP1ngaP4yjAaWANXY6UNGBh7QiM2WFQ0="
+  },
+  "krita-ai-diffusion": {
+    "owner": "Acly",
+    "repo": "krita-ai-diffusion",
+    "fetchSubmodules": true,
+    "rev": "6e138d5e4e8a17470b3ddd76000258850dcd7d61",
+    "hash": "sha256-EINCG9s15PMp8ZwXHWbV97NFe6gGGJd//RKP0bgT/mA="
+  }
+}
