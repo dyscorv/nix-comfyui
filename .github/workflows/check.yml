@@ -1,0 +1,17 @@
+name: check
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v27
+      - run: nix develop --command just check
+      - run: nix develop --command just build comfyui-with-extensions
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - run: nix develop --command just build krita-ai-diffusion
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
