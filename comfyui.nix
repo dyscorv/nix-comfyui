@@ -59,6 +59,13 @@ python3.pkgs.buildPythonApplication {
     "LD_LIBRARY_PATH"
     ":"
     "/run/opengl-driver/lib"
+
+    # Some dependencies try to dlopen() libnvrtc.so.12 at runtime, namely torch
+    # and cupy-cuda12x.
+    "--prefix"
+    "LD_LIBRARY_PATH"
+    ":"
+    "${python3.pkgs.nvidia-cuda-nvrtc-cu12}/${python3.sitePackages}/nvidia/cuda_nvrtc/lib"
   ];
 
   prePatch = ''

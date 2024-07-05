@@ -6,6 +6,7 @@
   addict = "*";
   aiohttp = "*";
   albumentations = "*";
+  cupy-cuda12x = "*";
   einops = "*";
   filelock = "*";
   ftfy = "*";
@@ -17,16 +18,20 @@
   mediapipe = "*";
   numpy = "*";
   omegaconf = "*";
+  onnx = ">=1.14.0";
   onnxruntime = "*";
   opencv-python = "==4.7.0.72";
+  packaging = "*";
   pillow = "*";
   psutil = "*";
   python-dateutil = "*";
   pyyaml = "*";
+  requests = "*";
   safetensors = ">=0.4.2";
   scikit-image = "*";
   scikit-learn = "*";
   scipy = "*";
+  segment-anything = "*";
   soundfile = "*";
   spandrel = "*";
   spandrel-extra-arches = "*";
@@ -38,6 +43,7 @@
   tqdm = "*";
   transformers = ">=4.25.1";
   trimesh = "*";
+  ultralytics = "*";
   yacs = "*";
   yapf = "*";
 }

@@ -34,11 +34,39 @@
     "rev": "6f1ba1c10df84af6d356119ccf4ebcf796a10e1c",
     "hash": "sha256-IapmOgCha9iYP1ngaP4yjAaWANXY6UNGBh7QiM2WFQ0="
   },
+  "fannovel16-frame-interpolation": {
+    "owner": "Fannovel16",
+    "repo": "ComfyUI-Frame-Interpolation",
+    "fetchSubmodules": false,
+    "rev": "551de2ffb99d868405fe7021ef8069cad429df4b",
+    "hash": "sha256-J6EHPb3P37bYpKuNzvT5uIKQFlPY1WNVXJGBHM73qMo="
+  },
+  "gourieff-reactor": {
+    "owner": "Gourieff",
+    "repo": "comfyui-reactor-node",
+    "fetchSubmodules": false,
+    "rev": "bcfd45c91eb9ff4f60c78edf0a48d631e42b46dc",
+    "hash": "sha256-S6DmT4dXtJddbIUPcgC3o39dMqzFoKQkrDA7/ZGy4pk="
+  },
   "krita-ai-diffusion": {
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
     "rev": "6e138d5e4e8a17470b3ddd76000258850dcd7d61",
     "hash": "sha256-EINCG9s15PMp8ZwXHWbV97NFe6gGGJd//RKP0bgT/mA="
+  },
+  "lev145-images-grid": {
+    "owner": "LEv145",
+    "repo": "images-grid-comfy-plugin",
+    "fetchSubmodules": false,
+    "rev": "852db490ef93702e1c68fe9774bdf65aaa7d3574",
+    "hash": "sha256-jVzA2sITIbWPV7gdH5XsxX7zvLNU4/sggc+ruCmo1GA="
+  },
+  "ssitu-ultimate-sd-upscale": {
+    "owner": "ssitu",
+    "repo": "ComfyUI_UltimateSDUpscale",
+    "fetchSubmodules": true,
+    "rev": "70083f5d449c498ee0fb35f5293c91cebac4b758",
+    "hash": "sha256-/DdjDkqSI9OkNOavYeTqjLwfrjLTx3mvTZapi4snXjc="
   }
 }

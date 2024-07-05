@@ -47,6 +47,38 @@ in
     ])
   ];
 
+  cupy-cuda12x = pipe prev.cupy-cuda12x [
+    (ignoreMissingDeps [
+      "libcutensor.so.2"
+    ])
+
+    (addAutoPatchelfSearchPath [
+      # libcublas.so.12
+      "${final.nvidia-cublas-cu12}/${sitePackages}/nvidia/cublas/lib"
+
+      # libcudnn.so.8
+      "${final.nvidia-cudnn-cu12}/${sitePackages}/nvidia/cudnn/lib"
+
+      # libcufft.so.11
+      "${final.nvidia-cufft-cu12}/${sitePackages}/nvidia/cufft/lib"
+
+      # libcurand.so.10
+      "${final.nvidia-curand-cu12}/${sitePackages}/nvidia/curand/lib"
+
+      # libcusolver.so.11
+      "${final.nvidia-cusolver-cu12}/${sitePackages}/nvidia/cusolver/lib"
+
+      # libcusparse.so.12
+      "${final.nvidia-cusparse-cu12}/${sitePackages}/nvidia/cusparse/lib"
+
+      # libnccl.so.2
+      "${final.nvidia-nccl-cu12}/${sitePackages}/nvidia/nccl/lib"
+
+      # libnvrtc.so.12
+      "${final.nvidia-cuda-nvrtc-cu12}/${sitePackages}/nvidia/cuda_nvrtc/lib"
+    ])
+  ];
+
   fvcore = pipe prev.fvcore [
     (addBuildInputs [
       final.setuptools
@@ -110,11 +142,6 @@ in
     (addPropagatedBuildInputs [
       # https://github.com/pytorch/pytorch/blob/dacc33d/torch/utils/cpp_extension.py#L10
       final.setuptools
-    ])
-
-    (addRunpaths [
-      # libtorch_cpu.so performs `dlopen("libnvrtc.so.12")`
-      "${final.nvidia-cuda-nvrtc-cu12}/${sitePackages}/nvidia/cuda_nvrtc/lib"
     ])
 
     (ignoreMissingDeps [
