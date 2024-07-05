@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "24b969d3dace581ed3fb547eedfbdf502ad0f7e9",
-    "hash": "sha256-ExEM7KGtgY9ruU4kW2O6s0uokXE05lUsPRnscoeZ2V0="
+    "rev": "1dc87df4c5f4925f8eb286236e71c9dd38941dd6",
+    "hash": "sha256-m0K2OD0nRk+cu5bDSAFd68UAkPvgmZbPsjhIQOJCiKs="
   },
   "cubiq-ipadapter-plus": {
     "owner": "cubiq",
@@ -52,8 +52,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "6e138d5e4e8a17470b3ddd76000258850dcd7d61",
-    "hash": "sha256-EINCG9s15PMp8ZwXHWbV97NFe6gGGJd//RKP0bgT/mA="
+    "rev": "209dc9b91aedcbd713e57b3298567a17f06423df",
+    "hash": "sha256-0Z+ifbVYzla8qQJPO1rYmnFpkPq4ooeuYBXkoGObQCc="
   },
   "lev145-images-grid": {
     "owner": "LEv145",
