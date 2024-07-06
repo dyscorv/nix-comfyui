@@ -20,6 +20,13 @@
     "rev": "b4c2d03d476f97d9d91c0d7d0af7fde382084385",
     "hash": "sha256-JWjNeB3TKyK3fjfk7VgjAngBPGhmbHAnI4DEDmKrh6A="
   },
+  "cubiq-instantid": {
+    "owner": "cubiq",
+    "repo": "ComfyUI_InstantID",
+    "fetchSubmodules": false,
+    "rev": "d8c70a0cd8ce0d4d62e78653674320c9c3084ec1",
+    "hash": "sha256-zLS2X4bW62Gqo48qB8kONJI1L0+tVKHLZV/fC2B5M9c="
+  },
   "cubiq-ipadapter-plus": {
     "owner": "cubiq",
     "repo": "ComfyUI_IPAdapter_plus",
@@ -47,6 +54,20 @@
     "fetchSubmodules": false,
     "rev": "bcfd45c91eb9ff4f60c78edf0a48d631e42b46dc",
     "hash": "sha256-S6DmT4dXtJddbIUPcgC3o39dMqzFoKQkrDA7/ZGy4pk="
+  },
+  "huchenlei-layerdiffuse": {
+    "owner": "huchenlei",
+    "repo": "ComfyUI-layerdiffuse",
+    "fetchSubmodules": false,
+    "rev": "ef55b8fc0fa0267b38b2abbdb0b5d7f2dc170646",
+    "hash": "sha256-NFGtIZpRyElt8xkgKqmKdlGrGJxErcS/Q/MaaHBEBbI="
+  },
+  "kijai-ic-light": {
+    "owner": "kijai",
+    "repo": "ComfyUI-IC-Light",
+    "fetchSubmodules": false,
+    "rev": "476303a5a9926e7cf61b2b18567a416d0bdd8d8c",
+    "hash": "sha256-5s2liguOHNwIV9PywFCCbYzROd6KscwYtk+RHEAmPFs="
   },
   "krita-ai-diffusion": {
     "owner": "Acly",

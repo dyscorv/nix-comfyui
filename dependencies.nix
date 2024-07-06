@@ -7,6 +7,7 @@
   aiohttp = "*";
   albumentations = "*";
   cupy-cuda12x = "*";
+  diffusers = "*";
   einops = "*";
   filelock = "*";
   ftfy = "*";
