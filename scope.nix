@@ -3,7 +3,11 @@
 pkgs.lib.makeScope pkgs.newScope (self: {
   inherit poetry2nix;
 
-  basePython = pkgs.python3;
+  basePython = pkgs.python311;
+
+  poetry = pkgs.poetry.override {
+    python3 = self.basePython;
+  };
 
   inherit (import ./toml.nix) toTOML;
 
