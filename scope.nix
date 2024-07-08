@@ -106,7 +106,10 @@ pkgs.lib.makeScope pkgs.newScope (self: {
 
   sources = builtins.fromJSON (builtins.readFile ./sources.json);
 
+  comfyui-unwrapped = self.callPackage ./comfyui-unwrapped.nix { };
+
   comfyui = self.callPackage ./comfyui.nix {
+    commandLineArgs = [ ];
     extensions = [ ];
   };
 
