@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "628f0b8ebc2c9a51205e5e5a9973f8db348a310f",
-    "hash": "sha256-cNjhGB2i4GVsczpmL+jFnJBVuSZrTkWuXywhDzZhG7s="
+    "rev": "bb663bcd6c81a4395100c5f8527a221037d366f8",
+    "hash": "sha256-fUe+9vN/keSs2eFeZZeDu9dPO+lOJXIWYvJ8W+plqIQ="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -38,8 +38,8 @@
     "owner": "Fannovel16",
     "repo": "comfyui_controlnet_aux",
     "fetchSubmodules": false,
-    "rev": "3c1d9de28afd59392c07f8419c14998df2b9204a",
-    "hash": "sha256-NQjjrKLzmZ8xoATRHv8+znGIUnDA727lNeXMwopeqGs="
+    "rev": "fc5c5c44de592854119ba83d3d42b85a27255cc4",
+    "hash": "sha256-h44rXE5SltvYw5kYMcCWKeWXo51DChhbjckKc7xR5w4="
   },
   "fannovel16-frame-interpolation": {
     "owner": "Fannovel16",
@@ -73,8 +73,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "885c2b018de2ffe91534f5381ff785b5c5438b75",
-    "hash": "sha256-gOlPqAJwRy4Nhb5ZoZDOv72Ow4AGY1FZlgCHegpBoWk="
+    "rev": "260f19ec027ea29901fd88315c0c690f4b5e05da",
+    "hash": "sha256-OIpaA5x9sRxuv9zQyekdE5OYEVD5FhqNAEWFQ15yYh8="
   },
   "lev145-images-grid": {
     "owner": "LEv145",
