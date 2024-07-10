@@ -3895,13 +3895,13 @@ vision = ["Pillow (>=10.0.1,<=15.0)"]
 
 [[package]]
 name = "trimesh"
-version = "4.4.1"
+version = "4.4.2"
 description = "Import, export, process, analyze and view triangular meshes."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "trimesh-4.4.1-py3-none-any.whl", hash = "sha256:dc00e293f4efed692b57e95ff9dafd5b62f2126439fb377d2a6b048d7d086933"},
-    {file = "trimesh-4.4.1.tar.gz", hash = "sha256:767fe3c866ba74e6d9a9d216c34ecc1cfe2fbf3f129a6c11d59871705a591aba"},
+    {file = "trimesh-4.4.2-py3-none-any.whl", hash = "sha256:0ee92c0d158c519e2696533c151d86d7f60532b9ed9346c4d78df7e66db58cd2"},
+    {file = "trimesh-4.4.2.tar.gz", hash = "sha256:c8de6895da005c7df29e9d199e85ca38c80c79a0edb709afcbc53feb12c47cfc"},
 ]
 
 [package.dependencies]
@@ -3910,8 +3910,8 @@ numpy = ">=1.20"
 [package.extras]
 all = ["trimesh[deprecated,easy,recommend,test]"]
 deprecated = ["gmsh (==4.12.2)"]
-easy = ["chardet", "colorlog", "embreex", "httpx", "jsonschema", "lxml", "mapbox-earcut", "networkx", "pillow", "pycollada", "rtree", "scipy", "setuptools", "shapely", "svg.path", "vhacdx", "xatlas", "xxhash"]
-recommend = ["cascadio", "glooey", "manifold3d (>=2.3.0)", "meshio", "openctm", "psutil", "pyglet (<2)", "python-fcl", "scikit-image", "sympy"]
+easy = ["chardet", "colorlog", "embreex", "httpx", "jsonschema", "lxml", "manifold3d (>=2.3.0)", "networkx", "pillow", "pycollada", "rtree", "scipy", "setuptools", "shapely", "svg.path", "vhacdx", "xatlas", "xxhash"]
+recommend = ["cascadio", "glooey", "mapbox-earcut", "meshio", "openctm", "psutil", "pyglet (<2)", "python-fcl", "scikit-image", "sympy"]
 test = ["coveralls", "ezdxf", "matplotlib", "pyinstrument", "pyright", "pytest", "pytest-beartype", "pytest-cov", "ruff"]
 
 [[package]]
@@ -3961,13 +3961,13 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.2.51"
+version = "8.2.52"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics-8.2.51-py3-none-any.whl", hash = "sha256:7575f8336d391c3ff8191741e0bacae496aef9b1faacfe56e8f25ebc817e1786"},
-    {file = "ultralytics-8.2.51.tar.gz", hash = "sha256:1eb9d3c4cf3447bc29cd909eb31d44224f96039a72018930317e769dcbf9fbad"},
+    {file = "ultralytics-8.2.52-py3-none-any.whl", hash = "sha256:bf7511fe42a7e091f42670188addf95e8fc1541e3686b3f94da26316b5115a87"},
+    {file = "ultralytics-8.2.52.tar.gz", hash = "sha256:3f399d241cde9b5ffa188a4534281f35d2b50cd1539323ba7b7df6e69db3ff47"},
 ]
 
 [package.dependencies]
