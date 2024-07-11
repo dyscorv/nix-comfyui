@@ -17,15 +17,15 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "8d3f979b633dab9824c59bf8a06c748a533eec0b",
-    "hash": "sha256-PEdOKrHSdfyXLwiHET5mtiw8FWBerywvnlJP8GSdG6M="
+    "rev": "ffe0bb0a33a8a8d9a999dafb540558646127d443",
+    "hash": "sha256-QA7WdEvbSGZev6hjOpzQi3BkmZxE5h6LXGWABvQwlds="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
     "repo": "ComfyUI_InstantID",
     "fetchSubmodules": false,
-    "rev": "d8c70a0cd8ce0d4d62e78653674320c9c3084ec1",
-    "hash": "sha256-zLS2X4bW62Gqo48qB8kONJI1L0+tVKHLZV/fC2B5M9c="
+    "rev": "23259995dd7c9d4ce85f39e54de01c8ed502a775",
+    "hash": "sha256-tw3khCfl0UU+JMcJAReWdB5OQXwWBWe0AXA8tOu+f3I="
   },
   "cubiq-ipadapter-plus": {
     "owner": "cubiq",
