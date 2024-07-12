@@ -3827,13 +3827,13 @@ files = [
 
 [[package]]
 name = "transformers"
-version = "4.42.3"
+version = "4.42.4"
 description = "State-of-the-art Machine Learning for JAX, PyTorch and TensorFlow"
 optional = false
 python-versions = ">=3.8.0"
 files = [
-    {file = "transformers-4.42.3-py3-none-any.whl", hash = "sha256:a61a0df9609b7d69229d941b2fd857c841ba3043d6da503d0da1a4b133f65b92"},
-    {file = "transformers-4.42.3.tar.gz", hash = "sha256:7539873ff45809145265cbc94ea4619d2713c41ceaa277b692d8b0be3430f7eb"},
+    {file = "transformers-4.42.4-py3-none-any.whl", hash = "sha256:6d59061392d0f1da312af29c962df9017ff3c0108c681a56d1bc981004d16d24"},
+    {file = "transformers-4.42.4.tar.gz", hash = "sha256:f956e25e24df851f650cb2c158b6f4352dfae9d702f04c113ed24fc36ce7ae2d"},
 ]
 
 [package.dependencies]
@@ -3895,13 +3895,13 @@ vision = ["Pillow (>=10.0.1,<=15.0)"]
 
 [[package]]
 name = "trimesh"
-version = "4.4.2"
+version = "4.4.3"
 description = "Import, export, process, analyze and view triangular meshes."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "trimesh-4.4.2-py3-none-any.whl", hash = "sha256:0ee92c0d158c519e2696533c151d86d7f60532b9ed9346c4d78df7e66db58cd2"},
-    {file = "trimesh-4.4.2.tar.gz", hash = "sha256:c8de6895da005c7df29e9d199e85ca38c80c79a0edb709afcbc53feb12c47cfc"},
+    {file = "trimesh-4.4.3-py3-none-any.whl", hash = "sha256:77dc3963ec3e4f560b37a66f8dd9132eee9f333d04837d2b0688ea12f05c099a"},
+    {file = "trimesh-4.4.3.tar.gz", hash = "sha256:a4110ad6832d23ccf4df32872a3804eeea216421352913d1514ed9dad2001d5e"},
 ]
 
 [package.dependencies]
@@ -3961,13 +3961,13 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.2.53"
+version = "8.2.54"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics-8.2.53-py3-none-any.whl", hash = "sha256:388f35f854af9be1829ecdd061d51781336194766080af27bcd256c4973011b0"},
-    {file = "ultralytics-8.2.53.tar.gz", hash = "sha256:045756758114ac35ac90e636bd5417e80976d468b3e9f5cd5d2d31f4a454b96b"},
+    {file = "ultralytics-8.2.54-py3-none-any.whl", hash = "sha256:46a6dd8c178ed8c912d89e59bf1383c1f8367d0a3b53136fc19eccb916843e87"},
+    {file = "ultralytics-8.2.54.tar.gz", hash = "sha256:2fc43617607482da926e2f0c4408c86c678da8ecc84d2822911cf2ab2d9cdec4"},
 ]
 
 [package.dependencies]

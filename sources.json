@@ -17,22 +17,22 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "ffe0bb0a33a8a8d9a999dafb540558646127d443",
-    "hash": "sha256-QA7WdEvbSGZev6hjOpzQi3BkmZxE5h6LXGWABvQwlds="
+    "rev": "8e012043a9d0af3979bbe2cea8dc1ec7768f9d88",
+    "hash": "sha256-7PKJTmvKvdi6TFTSTni1Yo8n1s8bMyA0TQCyiWx/AwA="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
     "repo": "ComfyUI_InstantID",
     "fetchSubmodules": false,
-    "rev": "23259995dd7c9d4ce85f39e54de01c8ed502a775",
-    "hash": "sha256-tw3khCfl0UU+JMcJAReWdB5OQXwWBWe0AXA8tOu+f3I="
+    "rev": "6d95aa6758e58dab550725e59dcefbd426c160c7",
+    "hash": "sha256-6WOJ8wSwrVaFYERmmJJA/em/AcBrqeGaJ1fgLHxEwRs="
   },
   "cubiq-ipadapter-plus": {
     "owner": "cubiq",
     "repo": "ComfyUI_IPAdapter_plus",
     "fetchSubmodules": false,
-    "rev": "8208e27bf10e9b5b36546dd64c4b820b168c2724",
-    "hash": "sha256-00/8MhCZjUL17NSwOmsoZ4naTKSU48bLGiwuJ21t7/U="
+    "rev": "13fedc634d1abf19d289fc7a7b5a74589465206c",
+    "hash": "sha256-vm0i76MvuK8th/KAPOUX7HTmcj9jV7+rlO7B3F+IGPk="
   },
   "fannovel16-controlnet-aux": {
     "owner": "Fannovel16",
