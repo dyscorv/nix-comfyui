@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "8e012043a9d0af3979bbe2cea8dc1ec7768f9d88",
-    "hash": "sha256-7PKJTmvKvdi6TFTSTni1Yo8n1s8bMyA0TQCyiWx/AwA="
+    "rev": "ce2473bb016748a4d98e9bce02d675b4fc22f4ac",
+    "hash": "sha256-v/ZXwU0V01j1R+gncIL46nckTqc5W0whoSSTt3N6vpo="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -73,8 +73,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "59cff1287eb7f788943ffb2d2d32b8eb7e1f7bc5",
-    "hash": "sha256-KAfVSEY9ePA/mH6+ooyKaoI9cxtHZUhJhcJNCtcXsAI="
+    "rev": "8578728837510484c932d93e618d5ea321c6a5b8",
+    "hash": "sha256-yxCisY1p2wM68NtxUey5TJGxeP3DpCMS4Pu788El/Xk="
   },
   "lev145-images-grid": {
     "owner": "LEv145",

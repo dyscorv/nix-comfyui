@@ -2556,13 +2556,13 @@ tests = ["pytest (>=5.4.1)", "pytest-cov (>=2.8.1)", "pytest-mypy (>=0.8.0)", "p
 
 [[package]]
 name = "prettytable"
-version = "3.10.0"
+version = "3.10.2"
 description = "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "prettytable-3.10.0-py3-none-any.whl", hash = "sha256:6536efaf0757fdaa7d22e78b3aac3b69ea1b7200538c2c6995d649365bddab92"},
-    {file = "prettytable-3.10.0.tar.gz", hash = "sha256:9665594d137fb08a1117518c25551e0ede1687197cf353a4fdc78d27e1073568"},
+    {file = "prettytable-3.10.2-py3-none-any.whl", hash = "sha256:1cbfdeb4bcc73976a778a0fb33cb6d752e75396f16574dcb3e2d6332fd93c76a"},
+    {file = "prettytable-3.10.2.tar.gz", hash = "sha256:29ec6c34260191d42cd4928c28d56adec360ac2b1208a26c7e4f14b90cc8bc84"},
 ]
 
 [package.dependencies]
@@ -3961,13 +3961,13 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.2.54"
+version = "8.2.55"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics-8.2.54-py3-none-any.whl", hash = "sha256:46a6dd8c178ed8c912d89e59bf1383c1f8367d0a3b53136fc19eccb916843e87"},
-    {file = "ultralytics-8.2.54.tar.gz", hash = "sha256:2fc43617607482da926e2f0c4408c86c678da8ecc84d2822911cf2ab2d9cdec4"},
+    {file = "ultralytics-8.2.55-py3-none-any.whl", hash = "sha256:1510c2f561474157ffa2d439a4a67e99e81c5d1a024f3b4ca06fdf7a43c10f3d"},
+    {file = "ultralytics-8.2.55.tar.gz", hash = "sha256:b77ace0b894ccfe4bb0cc2e26ddcd51291d1c9502dc11e4e90c4e8a7fe411eba"},
 ]
 
 [package.dependencies]
