@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "374e093e09c94b528d7c9dfc337c65cc5c433ee3",
-    "hash": "sha256-z3ZhGcxXIkhNsdX3XVnLToEX6lDyNFyPgUXFtlJSfmM="
+    "rev": "011b11d8d767da3355555fe1253b162f55e985c5",
+    "hash": "sha256-dqtbL8bMG+LmmLq9CfEl3Dt44Ac2bwibu9gqmqpq7lI="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -31,8 +31,8 @@
     "owner": "cubiq",
     "repo": "ComfyUI_IPAdapter_plus",
     "fetchSubmodules": false,
-    "rev": "19b8645230f57ef4b5efcc1b8aea7c9ad005cfb8",
-    "hash": "sha256-VEGWV0oT7TBkm49v8E5+uRfk1X9Pv2yQZ6Zbd50G33I="
+    "rev": "78ac59c61c8caf33e3419d2c8f70838b2da0fb04",
+    "hash": "sha256-lx15IvFkDS1SjtUo2mf2ITAxJR8QVX/1TskGo6nik0Y="
   },
   "fannovel16-controlnet-aux": {
     "owner": "Fannovel16",
@@ -45,8 +45,8 @@
     "owner": "Fannovel16",
     "repo": "ComfyUI-Frame-Interpolation",
     "fetchSubmodules": false,
-    "rev": "551de2ffb99d868405fe7021ef8069cad429df4b",
-    "hash": "sha256-J6EHPb3P37bYpKuNzvT5uIKQFlPY1WNVXJGBHM73qMo="
+    "rev": "a35c620f3ef15ff5a6ab797e45b97d3fe8e07799",
+    "hash": "sha256-sYP8UL79IP65dWZPyiFpZI0Dpg38g6nv6PByCFCzB0Y="
   },
   "gourieff-reactor": {
     "owner": "Gourieff",
@@ -73,8 +73,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "2937642eea13bdd31dc583b8cf81495c8b83b7f5",
-    "hash": "sha256-yOFTbt+sWnF8xj6SiiKaDkuhC6YrUEjwr2uIjSKnR0o="
+    "rev": "697d6ad6d94a0ae393dc2d18505fa0aca97ab943",
+    "hash": "sha256-pHQNMg7E1j4PJvwSfPdqd75iq7i3MCEpUtHqa1QsWys="
   },
   "lev145-images-grid": {
     "owner": "LEv145",
