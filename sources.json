@@ -10,15 +10,15 @@
     "owner": "Acly",
     "repo": "comfyui-tooling-nodes",
     "fetchSubmodules": false,
-    "rev": "5620b5c6e29b6d74138f30adf77a09cc25377221",
-    "hash": "sha256-jRL0O3/8sSY4iZNJvPod59ygUpJRbWjYAJRhEWYU0YU="
+    "rev": "73babbd00e0c1e6b32923008a51f50b0dc17665d",
+    "hash": "sha256-PRPJ8iAf39iHIAOxvYtVf2KORIqbsodd0arhdBUHbp8="
   },
   "comfyui": {
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "95fa9545f167ccf4010849c70045a67a8800aa31",
-    "hash": "sha256-k2IlPvDB088Udd+VqhyMTbE69EP4FVvn3bN4BFC2Iqg="
+    "rev": "6045ed31f898e278e4693f2a4e210393fc9153d0",
+    "hash": "sha256-NVoK+c/eJwyka6KE4ODtWlxH0HjPxjTOagC3Rog+Vwg="
   },
   "cubiq-instantid": {
     "owner": "cubiq",

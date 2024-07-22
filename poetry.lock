@@ -3495,13 +3495,13 @@ files = [
 
 [[package]]
 name = "tifffile"
-version = "2024.7.2"
+version = "2024.7.21"
 description = "Read and write TIFF files"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "tifffile-2024.7.2-py3-none-any.whl", hash = "sha256:5a2ee608c9cc1f2e044d943dacebddc71d4827b6fad150ef4c644b7aefbe2d1a"},
-    {file = "tifffile-2024.7.2.tar.gz", hash = "sha256:02e52e8872c0e9943add686d2fd8bcfb18f0a824760882cf5e35fcbc2c80e32c"},
+    {file = "tifffile-2024.7.21-py3-none-any.whl", hash = "sha256:7f335b5d6ca49401fe0f1d87deb206f5dae47297e47b1ed52a676d05d6d26798"},
+    {file = "tifffile-2024.7.21.tar.gz", hash = "sha256:818b577d49350421fb511f389f937984f9feaa2cd8177fa00823001920bf3483"},
 ]
 
 [package.dependencies]
@@ -3509,6 +3509,10 @@ numpy = "*"
 
 [package.extras]
 all = ["defusedxml", "fsspec", "imagecodecs (>=2023.8.12)", "lxml", "matplotlib", "zarr"]
+codecs = ["imagecodecs (>=2023.8.12)"]
+plot = ["matplotlib"]
+xml = ["defusedxml", "lxml"]
+zarr = ["fsspec", "zarr"]
 
 [[package]]
 name = "tinycss2"
@@ -3962,13 +3966,13 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.2.61"
+version = "8.2.62"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics-8.2.61-py3-none-any.whl", hash = "sha256:78a4f2c7cccd8bebeea4f75a1d597c1dfabd5691fdf7884dd0190098364a31c1"},
-    {file = "ultralytics-8.2.61.tar.gz", hash = "sha256:46e192adc99ed0a6350c0da7999e0f5b0a79bc447ad8aef8a4763d022edd0ce5"},
+    {file = "ultralytics-8.2.62-py3-none-any.whl", hash = "sha256:fb0e8f7d6e2d14d280d0ce69b67b56d2beaa8a1428832b99ce5a9f0187734aed"},
+    {file = "ultralytics-8.2.62.tar.gz", hash = "sha256:eaf94c673ff616a44eefbc86fed8728d805dbc26b4e5672319e5e2f454f64cc3"},
 ]
 
 [package.dependencies]
