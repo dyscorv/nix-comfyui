@@ -37,7 +37,7 @@
   spandrel = "*";
   spandrel-extra-arches = "*";
   svglib = "*";
-  torch = "*";
+  torch = "~2.3"; # 2.4 pulls incompatible nvidia-cudnn-cu12
   torchaudio = "*";
   torchsde = "*";
   torchvision = "*";

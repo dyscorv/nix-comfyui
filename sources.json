@@ -10,15 +10,15 @@
     "owner": "Acly",
     "repo": "comfyui-tooling-nodes",
     "fetchSubmodules": false,
-    "rev": "f42c0f29b6cc7cf92039d22f84c78422699930c2",
-    "hash": "sha256-hXsFR4bKP34K69dB9M87fDWhvj8I13UmufWZDjpTf0U="
+    "rev": "b5fec4a0625e47586b7b28585ce27d4ecdd3b18a",
+    "hash": "sha256-1rb9kt40AC2OPIXsHLsE6jyuQZmHT8te60woVZugWa0="
   },
   "comfyui": {
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "0a4c49c57ca792535174d27aea87449257527b2f",
-    "hash": "sha256-jvWd0Z8eQk5eQjTPOkAzuID9dVFu6IsbGzesau+epBk="
+    "rev": "1c08bf35b49879115dedd8ec6bc92d9e8d8fd871",
+    "hash": "sha256-5XwUQlYwqCccynmvAU7FJMEjOljYGsLWyCE1sdb6u3U="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -31,36 +31,36 @@
     "owner": "cubiq",
     "repo": "ComfyUI_IPAdapter_plus",
     "fetchSubmodules": false,
-    "rev": "78ac59c61c8caf33e3419d2c8f70838b2da0fb04",
-    "hash": "sha256-lx15IvFkDS1SjtUo2mf2ITAxJR8QVX/1TskGo6nik0Y="
+    "rev": "ce9b62165b89fbf8dd3be61057d62a5f8bc29e19",
+    "hash": "sha256-SFAmwwdDXSplvxgmulszSVTg8GsdpCntGxKWvMMSIQI="
   },
   "fannovel16-controlnet-aux": {
     "owner": "Fannovel16",
     "repo": "comfyui_controlnet_aux",
     "fetchSubmodules": false,
-    "rev": "fc5c5c44de592854119ba83d3d42b85a27255cc4",
-    "hash": "sha256-h44rXE5SltvYw5kYMcCWKeWXo51DChhbjckKc7xR5w4="
+    "rev": "1d7cdce8cb771fbc39a432a6338168c12a338ef4",
+    "hash": "sha256-eCC3EbUQwjGtrNMhkhd+ZKw5W0Kw+yxiIk6nBptzCQM="
   },
   "fannovel16-frame-interpolation": {
     "owner": "Fannovel16",
     "repo": "ComfyUI-Frame-Interpolation",
     "fetchSubmodules": false,
-    "rev": "a35c620f3ef15ff5a6ab797e45b97d3fe8e07799",
-    "hash": "sha256-sYP8UL79IP65dWZPyiFpZI0Dpg38g6nv6PByCFCzB0Y="
+    "rev": "483dfe64465369e077d351ed2f1acbf7dc046864",
+    "hash": "sha256-EyuWpnuGhlfq0Y51BJEvcF8grOhTT+RuItPouwS7cAI="
   },
   "gourieff-reactor": {
     "owner": "Gourieff",
     "repo": "comfyui-reactor-node",
     "fetchSubmodules": false,
-    "rev": "bcfd45c91eb9ff4f60c78edf0a48d631e42b46dc",
-    "hash": "sha256-S6DmT4dXtJddbIUPcgC3o39dMqzFoKQkrDA7/ZGy4pk="
+    "rev": "2832357b72d55017ec689f51e2a7738d7eabfa74",
+    "hash": "sha256-nLdG2uYH3irrZzPahCk6QM9+73el93MXaBrPb1YBSnE="
   },
   "huchenlei-layerdiffuse": {
     "owner": "huchenlei",
     "repo": "ComfyUI-layerdiffuse",
     "fetchSubmodules": false,
-    "rev": "ef55b8fc0fa0267b38b2abbdb0b5d7f2dc170646",
-    "hash": "sha256-NFGtIZpRyElt8xkgKqmKdlGrGJxErcS/Q/MaaHBEBbI="
+    "rev": "2cbfe3972c18f3bce49d6bf9631d5fd49d9d81d0",
+    "hash": "sha256-cNYPMlev7DcY9sDle8/uWGhHZSP04uoghzP20biQh9o="
   },
   "kijai-ic-light": {
     "owner": "kijai",
@@ -73,8 +73,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "154f028202c185ae3929407ac7e56ab59e8f2eba",
-    "hash": "sha256-l6JbUQifBGkyoWFscxg/Nnde7RCCmSg9G+JL3H1hLnY="
+    "rev": "f6cb8aefce9d6684bb1c9bad5bd5ce9f2c84da93",
+    "hash": "sha256-M1xmrjl40Ehr2t9NCz4GGUFD+Zzp+1PwDQQMNWStBRY="
   },
   "lev145-images-grid": {
     "owner": "LEv145",
