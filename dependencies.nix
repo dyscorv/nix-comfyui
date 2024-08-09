@@ -17,12 +17,14 @@
   insightface = "*";
   kornia = ">=0.7.1";
   mediapipe = "*";
+  numexpr = "*";
   numpy = "*";
   omegaconf = "*";
   onnx = ">=1.14.0";
   onnxruntime = "*";
   opencv-python = "==4.7.0.72";
   packaging = "*";
+  pandas = "*";
   pillow = "*";
   psutil = "*";
   python-dateutil = "*";
