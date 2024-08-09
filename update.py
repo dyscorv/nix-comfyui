@@ -1,5 +1,6 @@
 import json
 import pathlib
+import sys
 
 from nix_prefetch_github.dependency_injector import DependencyInjector
 from nix_prefetch_github.interfaces import (
@@ -14,8 +15,9 @@ SOURCES_PATH = pathlib.Path("sources.json")
 def main():
     prefetcher = DependencyInjector().get_prefetcher()
     sources = load_sources()
-    for source in sources.values():
-        update_source(prefetcher, source)
+    names = sys.argv[1:] if len(sys.argv) > 1 else sources.keys()
+    for name in names:
+        update_source(prefetcher, sources[name])
     write_sources(sources)
 
 

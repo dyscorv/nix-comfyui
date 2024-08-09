@@ -31,5 +31,5 @@ up-flake:
 
 up-lock: (poetry "lock")
 
-up-sources:
-    python3 update.py
+up-sources *names:
+    python3 update.py "$@"
