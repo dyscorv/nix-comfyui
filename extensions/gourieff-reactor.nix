@@ -25,6 +25,11 @@ buildExtension {
   ];
 
   prePatch = ''
+    substituteInPlace r_facelib/utils/misc.py \
+      --replace-fail \
+        'os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))' \
+        'os.getcwd() + "/custom_nodes/gourieff-reactor"'
+
     find -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
         --replace-quiet \
