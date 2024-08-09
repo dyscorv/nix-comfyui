@@ -127,13 +127,18 @@ pkgs.lib.makeScope pkgs.newScope (self: {
 
   krita-with-extensions = self.callPackage
     (
-      { krita, krita-ai-diffusion }:
+      { krita, krita-ai-diffusion, qt5 }:
+
+      # qtimageformats is a runtime dependency of krita-ai-diffusion.
+      # https://github.com/NixOS/nixpkgs/issues/304523
+      # https://github.com/Acly/krita-ai-diffusion/issues/582
 
       krita.overrideAttrs (old: {
         buildCommand = ''
           ${old.buildCommand or ""}
 
           wrapProgram $out/bin/krita \
+            --prefix QT_PLUGIN_PATH : ${qt5.qtimageformats}/${qt5.qtbase.qtPluginPrefix} \
             --prefix XDG_DATA_DIRS : ${krita-ai-diffusion}/share
         '';
       })
