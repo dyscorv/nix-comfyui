@@ -3,22 +3,22 @@
     "owner": "Acly",
     "repo": "comfyui-inpaint-nodes",
     "fetchSubmodules": false,
-    "rev": "717cb7717daf9f10979940163f708e35ee8eda05",
-    "hash": "sha256-tNMm7KWaKSEGvbCX0apIBFHeUjIQ/EG7Ra/8UUWuSTI="
+    "rev": "69e5f2a0c2d475b83c3d4911f1786107d337bdcb",
+    "hash": "sha256-bh52JG+Zee/5p/fHbn4Ajcofp1GqiNF8WlyurauaOZs="
   },
   "acly-tooling": {
     "owner": "Acly",
     "repo": "comfyui-tooling-nodes",
     "fetchSubmodules": false,
-    "rev": "b5fec4a0625e47586b7b28585ce27d4ecdd3b18a",
-    "hash": "sha256-1rb9kt40AC2OPIXsHLsE6jyuQZmHT8te60woVZugWa0="
+    "rev": "d1dcf12f1007f3067b3128361dd5729d244fb25f",
+    "hash": "sha256-6FPv+UutUkI5IQpL+4FDKLq5G2/zsRXd/YtiDjK2/Pc="
   },
   "comfyui": {
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "413322645e713bdda69836620a97d4c9ca66b230",
-    "hash": "sha256-KstlyFguGV6E3mjLWb8lIs6j0y39nIKtou5nLZ5ghO8="
+    "rev": "1b5b8ca81a5bc141ed40a94919fa5b6c81d8babb",
+    "hash": "sha256-imW4PNOcBVi1JrzX/0M5kt17lXBlSDUyIUHu7A8bRJg="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -101,8 +101,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "2704826570cbd6bffcba3c289aafc23f585102b0",
-    "hash": "sha256-1laT3BrPfHKstGlAaQ+pNlXyx6edhkoXtNizQnfU0nM="
+    "rev": "2e47b2394c2e1bf27f15b30836b40a7f4459fa84",
+    "hash": "sha256-oNIKVFlqJeWLNJT5Aoue3k6uiopLsypOwwbQVbFYEEU="
   },
   "lev145-images-grid": {
     "owner": "LEv145",
