@@ -144,4 +144,6 @@ pkgs.lib.makeScope pkgs.newScope (self: {
       })
     )
     { };
+
+  check-pkgs = self.callPackage ./check-pkgs.nix { };
 })

@@ -63,6 +63,7 @@
           nix-comfyui-sources = pkgs.runCommand "nix-comfyui-sources"
             {
               nativeBuildInputs = [
+                comfyuiPackages.check-pkgs
                 pkgs.just
                 pkgs.nixpkgs-fmt
                 pkgs.yapf
@@ -74,6 +75,7 @@
               just --unstable --fmt --check
               nixpkgs-fmt --check .
               yapf --recursive --parallel --diff .
+              check-pkgs
 
               touch $out
             '';
