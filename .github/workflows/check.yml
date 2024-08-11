@@ -1,4 +1,4 @@
-name: check
+name: Check
 
 on:
   pull_request:
@@ -11,7 +11,3 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@v27
       - run: nix develop --command just check
-      - run: nix develop --command just build comfyui-with-extensions
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      - run: nix develop --command just build krita-ai-diffusion
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'

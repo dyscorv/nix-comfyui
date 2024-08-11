@@ -39,6 +39,7 @@
     inputs.flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = inputs.nixpkgs.legacyPackages."${system}";
+        comfyuiPackages = mkComfyuiPackages pkgs;
       in
       {
         formatter = pkgs.nixpkgs-fmt;
@@ -54,7 +55,31 @@
           ];
         };
 
-        legacyPackages = mkComfyuiPackages pkgs;
+        checks = {
+          inherit (comfyuiPackages)
+            comfyui-with-extensions
+            krita-with-extensions;
+
+          nix-comfyui-sources = pkgs.runCommand "nix-comfyui-sources"
+            {
+              nativeBuildInputs = [
+                pkgs.just
+                pkgs.nixpkgs-fmt
+                pkgs.yapf
+              ];
+            }
+            ''
+              cd ${./.}
+
+              just --unstable --fmt --check
+              nixpkgs-fmt --check .
+              yapf --recursive --parallel --diff .
+
+              touch $out
+            '';
+        };
+
+        legacyPackages = comfyuiPackages;
       }
     );
 }

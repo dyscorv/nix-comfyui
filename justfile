@@ -9,9 +9,7 @@ build name:
       --verbose "${@:2}" .#{{ quote(name) }}
 
 check:
-    just --unstable --fmt --check
-    nixpkgs-fmt --check .
-    yapf --recursive --parallel --diff .
+    nix flake check --keep-going --print-build-logs --verbose
 
 fmt:
     just --unstable --fmt
