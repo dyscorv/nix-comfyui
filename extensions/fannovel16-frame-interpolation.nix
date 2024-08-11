@@ -34,6 +34,17 @@ buildExtension {
     done
   '';
 
+  passthru = {
+    check-pkgs.ignoredModuleNames = [
+      "^mysql(\\..+)?$"
+      "^pyunpack$"
+      "^taichi(\\..+)?$"
+      "^vapoursynth$"
+      "^vfi_models(\\..+)?$"
+      "^vfi_utils$"
+    ];
+  };
+
   meta = {
     license = lib.licenses.mit;
   };

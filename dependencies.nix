@@ -6,6 +6,7 @@
   addict = "*";
   aiohttp = "*";
   albumentations = "*";
+  argostranslate = "*";
   cupy-cuda12x = "*";
   diffusers = "*";
   einops = "*";
@@ -35,10 +36,12 @@
   scikit-learn = "*";
   scipy = "*";
   segment-anything = "*";
+  sentencepiece = "*";
   soundfile = "*";
   spandrel = "*";
   spandrel-extra-arches = "*";
   svglib = "*";
+  tokenizers = ">=0.13.3";
   torch = "~2.3"; # 2.4 pulls incompatible nvidia-cudnn-cu12
   torchaudio = "*";
   torchsde = "*";
@@ -46,6 +49,7 @@
   tqdm = "*";
   transformers = ">=4.25.1";
   trimesh = "*";
+  typing-extensions = "*";
   ultralytics = "*";
   yacs = "*";
   yapf = "*";

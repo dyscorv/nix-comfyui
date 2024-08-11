@@ -25,17 +25,21 @@ python3.pkgs.buildPythonPackage {
     python3.pkgs.pillow
     python3.pkgs.psutil
     python3.pkgs.pyyaml
+    python3.pkgs.requests
     python3.pkgs.safetensors
     python3.pkgs.scipy
+    python3.pkgs.sentencepiece
     python3.pkgs.soundfile
     python3.pkgs.spandrel
     python3.pkgs.spandrel-extra-arches
+    python3.pkgs.tokenizers
     python3.pkgs.torch
     python3.pkgs.torchaudio
     python3.pkgs.torchsde
     python3.pkgs.torchvision
     python3.pkgs.tqdm
     python3.pkgs.transformers
+    python3.pkgs.typing-extensions
   ];
 
   prePatch = ''
@@ -48,7 +52,21 @@ python3.pkgs.buildPythonPackage {
       --replace-fail \
         'os.path.join(base_path, "custom_nodes")' \
         'os.getenv("NIX_COMFYUI_CUSTOM_NODES", os.path.join(os.getcwd(), "custom_nodes"))'
+
+    rm --force --recursive .ci script_examples tests-unit
   '';
+
+  pythonImportsCheck = [
+    "folder_paths"
+  ];
+
+  passthru = {
+    check-pkgs.ignoredModuleNames = [
+      "^intel_extension_for_pytorch$"
+      "^torch_directml$"
+      "^xformers(\\..+)?$"
+    ];
+  };
 
   meta = {
     license = lib.licenses.gpl3;

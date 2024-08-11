@@ -18,6 +18,12 @@ buildExtension {
         'CATEGORY = "ic_light"'
   '';
 
+  passthru = {
+    check-pkgs.ignoredModuleNames = [
+      "^model_management$"
+    ];
+  };
+
   meta = {
     license = lib.licenses.asl20;
   };

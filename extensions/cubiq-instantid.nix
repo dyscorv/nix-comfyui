@@ -7,6 +7,7 @@ buildExtension {
   propagatedBuildInputs = [
     python3.pkgs.insightface
     python3.pkgs.numpy
+    python3.pkgs.onnxruntime
     python3.pkgs.opencv-python
     python3.pkgs.pillow
     python3.pkgs.torch
@@ -19,6 +20,12 @@ buildExtension {
         'CATEGORY = "InstantID"' \
         'CATEGORY = "instantid"'
   '';
+
+  passthru = {
+    check-pkgs.ignoredPackageNames = [
+      "onnxruntime-gpu"
+    ];
+  };
 
   meta = {
     license = lib.licenses.asl20;

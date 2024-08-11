@@ -48,6 +48,10 @@ buildExtension {
     done
   '';
 
+  passthru = {
+    check-pkgs.fromImports = false;
+  };
+
   meta = {
     license = lib.licenses.asl20;
   };

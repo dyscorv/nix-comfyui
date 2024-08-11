@@ -40,6 +40,28 @@ buildExtension {
     done
   '';
 
+  passthru = {
+    check-pkgs.ignoredPackageNames = [
+      "setuptools"
+    ];
+
+    check-pkgs.ignoredModuleNames = [
+      "^custom_nodes.facerestore(\\..+)?$"
+      "^lmdb$"
+      "^mc$"
+      "^modules(\\..+)?$"
+      "^r_basicsr(\\..+)?$"
+      "^r_chainner(\\..+)?$"
+      "^r_facelib(\\..+)?$"
+      "^reactor_patcher$"
+      "^reactor_utils$"
+      "^scripts(\\..+)?$"
+      "^tensorboard(\\..+)?$"
+      "^torchvision.transforms.functional_tensor$"
+      "^wandb$"
+    ];
+  };
+
   meta = {
     license = lib.licenses.gpl3;
   };

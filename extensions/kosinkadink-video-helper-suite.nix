@@ -45,6 +45,16 @@ buildExtension {
     done
   '';
 
+  passthru = {
+    check-pkgs.ignoredPackageNames = [
+      "imageio-ffmpeg"
+    ];
+
+    check-pkgs.ignoredModuleNames = [
+      "^imageio_ffmpeg$"
+    ];
+  };
+
   meta = {
     license = lib.licenses.gpl3;
   };

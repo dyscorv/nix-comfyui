@@ -30,6 +30,12 @@ buildExtension {
     done
   '';
 
+  passthru = {
+    check-pkgs.ignoredModuleNames = [
+      "^__main__$"
+    ];
+  };
+
   meta = {
     license = lib.licenses.mit;
   };

@@ -11,6 +11,16 @@ buildExtension {
     python3.pkgs.torchvision
   ];
 
+  passthru = {
+    check-pkgs.ignoredModuleNames = [
+      "^gradio$"
+      "^modules(\\..+)?$"
+      "^repositories$"
+      "^usdu_patch$"
+      "^utils$"
+    ];
+  };
+
   meta = {
     license = lib.licenses.gpl3;
   };

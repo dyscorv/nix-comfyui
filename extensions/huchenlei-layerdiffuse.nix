@@ -14,6 +14,12 @@ buildExtension {
     python3.pkgs.tqdm
   ];
 
+  passthru = {
+    check-pkgs.ignoredModuleNames = [
+      "^diffusers.models.unet_2d_blocks$"
+    ];
+  };
+
   meta = {
     license = lib.licenses.asl20;
   };

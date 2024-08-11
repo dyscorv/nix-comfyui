@@ -132,6 +132,12 @@ in
   # > do not know how to unpack source archive /nix/store/*.whl
   inherit (basePython.pkgs) packaging tomli;
 
+  sacremoses = pipe prev.sacremoses [
+    (addBuildInputs [
+      final.setuptools
+    ])
+  ];
+
   svglib = pipe prev.svglib [
     (addBuildInputs [
       final.setuptools
