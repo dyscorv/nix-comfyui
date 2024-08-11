@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "1b5b8ca81a5bc141ed40a94919fa5b6c81d8babb",
-    "hash": "sha256-imW4PNOcBVi1JrzX/0M5kt17lXBlSDUyIUHu7A8bRJg="
+    "rev": "75b9b55b221fc95f7137a91e2349e45693e342b8",
+    "hash": "sha256-JsCBfdAfZSPzXwcc2sVTl+fiFPT47J4EGDQIf9ri7Xc="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
