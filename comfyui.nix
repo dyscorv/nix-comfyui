@@ -15,8 +15,7 @@ let
     comfyui-unwrapped.propagatedBuildInputs
     extensions;
 
-  pythonpath = python3.pkgs.makePythonPath
-    (python3.pkgs.requiredPythonModules propagatedBuildInputs);
+  interpreter = python3.withPackages (_: propagatedBuildInputs);
 in
 
 stdenv.mkDerivation {
@@ -29,19 +28,12 @@ stdenv.mkDerivation {
   dontUnpack = true;
 
   makeWrapperArgs = [
-    (lib.getExe python3)
+    (lib.getExe interpreter)
     "${placeholder "out"}/bin/comfyui"
-
-    "--inherit-argv0"
 
     "--set-default"
     "NIX_COMFYUI_CUSTOM_NODES"
     "${placeholder "out"}/share/comfyui/custom_nodes"
-
-    "--prefix"
-    "PYTHONPATH"
-    ":"
-    pythonpath
 
     # "RuntimeError: Found no NVIDIA driver on your system..."
     "--prefix"

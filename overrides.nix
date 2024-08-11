@@ -10,6 +10,16 @@ let
   inherit (lib) pipe;
   inherit (final.python) sitePackages;
 
+  mkFailingPackage = { pname, message }:
+    final.buildPythonPackage {
+      inherit pname;
+      version = "0.0.0";
+      buildCommand = ''
+        printf "%s\n" ${lib.escapeShellArg message} >&2
+        false
+      '';
+    };
+
   addAutoPatchelfSearchPath = paths: package:
     package.overridePythonAttrs (old: {
       preFixup = ''
@@ -38,9 +48,45 @@ let
     package.overridePythonAttrs (old: {
       autoPatchelfIgnoreMissingDeps = deps;
     });
+
+  removeFiles = paths: package:
+    package.overridePythonAttrs (old: {
+      postFixup = ''
+        ${old.postFixup or ""}
+        ${builtins.concatStringsSep "\n" (map (path:
+          "rm -rf $out/${sitePackages}/${lib.escapeShellArg path}") paths)}
+      '';
+    });
+
+  replaceOpenCV = package:
+    package.overridePythonAttrs (old: {
+      propagatedBuildInputs =
+        let
+          originalInputs = old.propagatedBuildInputs;
+          filteredInputs = (builtins.filter
+            (x: !(builtins.elem x.pname [
+              "opencv-contrib-python"
+              "opencv-contrib-python-headless"
+              "opencv-python-headless"
+            ]))
+            originalInputs);
+        in
+        if builtins.length originalInputs == builtins.length filteredInputs then
+          throw "Package ${package.pname} does not depend on opencv-*"
+        else
+          filteredInputs ++ [ final.opencv-python ];
+    });
 in
 
 {
+  albucore = pipe prev.albucore [
+    replaceOpenCV
+  ];
+
+  albumentations = pipe prev.albumentations [
+    replaceOpenCV
+  ];
+
   antlr4-python3-runtime = pipe prev.antlr4-python3-runtime [
     (addBuildInputs [
       final.setuptools
@@ -101,10 +147,61 @@ in
     ])
   ];
 
+  mediapipe = pipe prev.mediapipe [
+    replaceOpenCV
+  ];
+
+  nvidia-cublas-cu12 = pipe prev.nvidia-cublas-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  nvidia-cuda-cupti-cu12 = pipe prev.nvidia-cuda-cupti-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  nvidia-cuda-nvrtc-cu12 = pipe prev.nvidia-cuda-nvrtc-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  nvidia-cuda-runtime-cu12 = pipe prev.nvidia-cuda-runtime-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
   nvidia-cudnn-cu12 = pipe prev.nvidia-cudnn-cu12 [
     (addRunpaths [
       # libcudnn.so.8 performs `dlopen("libcudnn_ops_infer.so.8")`
       "${placeholder "out"}/${sitePackages}/nvidia/cudnn/lib"
+    ])
+
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  nvidia-cufft-cu12 = pipe prev.nvidia-cufft-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  nvidia-curand-cu12 = pipe prev.nvidia-curand-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
     ])
   ];
 
@@ -120,6 +217,11 @@ in
       # libnvJitLink.so.12
       "${final.nvidia-nvjitlink-cu12}/${sitePackages}/nvidia/nvjitlink/lib"
     ])
+
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
   ];
 
   nvidia-cusparse-cu12 = pipe prev.nvidia-cusparse-cu12 [
@@ -127,7 +229,48 @@ in
       # libnvJitLink.so.12
       "${final.nvidia-nvjitlink-cu12}/${sitePackages}/nvidia/nvjitlink/lib"
     ])
+
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
   ];
+
+  nvidia-nccl-cu12 = pipe prev.nvidia-nccl-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  nvidia-nvjitlink-cu12 = pipe prev.nvidia-nvjitlink-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  nvidia-nvtx-cu12 = pipe prev.nvidia-nvtx-cu12 [
+    (removeFiles [
+      "nvidia/__init__.py"
+      "nvidia/__pycache__"
+    ])
+  ];
+
+  opencv-contrib-python = mkFailingPackage {
+    pname = "opencv-contrib-python";
+    message = "Use opencv-python instead of opencv-contrib-python";
+  };
+
+  opencv-contrib-python-headless = mkFailingPackage {
+    pname = "opencv-contrib-python-headless";
+    message = "Use opencv-python instead of opencv-contrib-python-headless";
+  };
+
+  opencv-python-headless = mkFailingPackage {
+    pname = "opencv-python-headless";
+    message = "Use opencv-python instead of opencv-python-headless";
+  };
 
   # > do not know how to unpack source archive /nix/store/*.whl
   inherit (basePython.pkgs) packaging tomli;
