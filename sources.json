@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "75b9b55b221fc95f7137a91e2349e45693e342b8",
-    "hash": "sha256-JsCBfdAfZSPzXwcc2sVTl+fiFPT47J4EGDQIf9ri7Xc="
+    "rev": "74e124f4d784b859465e751a7b361c20f192f0f9",
+    "hash": "sha256-QWgpTnPPypcLgyYp628+3Oq+CkYyApGdNiOVl1tLQrQ="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -87,15 +87,15 @@
     "owner": "Kosinkadink",
     "repo": "ComfyUI-AnimateDiff-Evolved",
     "fetchSubmodules": false,
-    "rev": "925511d139c0ea3b09363358fc877010808336cb",
-    "hash": "sha256-rWKLg5wLyaH7Vu+RB9KIIPHtogjYEdPo9R0FK3MLhZY="
+    "rev": "8f7ee51ceda2e1f590cc64284e0c92ea4b252eed",
+    "hash": "sha256-/e5vV1HrSkcq8MB4OE3q5xYF5e7ZC6oqPyccEbeKUzo="
   },
   "kosinkadink-video-helper-suite": {
     "owner": "Kosinkadink",
     "repo": "ComfyUI-VideoHelperSuite",
     "fetchSubmodules": false,
-    "rev": "bf2a9402d0b2727c7170c43621d569f4d531015f",
-    "hash": "sha256-+/IWiJEdkg21vdUionJHc91qQ/j0740ur3Vctt1YIsI="
+    "rev": "6bffe8b90f4464f76f1606bd93b94f1ac8d38041",
+    "hash": "sha256-C5Nkrnyush5xf6yqInkSfSs/PNCpDonTlA3+HHaLsS8="
   },
   "krita-ai-diffusion": {
     "owner": "Acly",
