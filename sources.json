@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "f1d6cef71c70719cc3ed45a2455a4e5ac910cd5e",
-    "hash": "sha256-f6C9DY31US0n+D8bQYuZxPYOWPcvqiwC7vWk0VvMdwc="
+    "rev": "0f9c2a78224ce3179c773fe3af63722f438b0613",
+    "hash": "sha256-osRyYfysRuaA8jBnNLV7JE94NRJrzsTmSttLtjsZm8w="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -80,15 +80,15 @@
     "owner": "Kosinkadink",
     "repo": "ComfyUI-Advanced-ControlNet",
     "fetchSubmodules": false,
-    "rev": "68e5cd41e43cf0ec0a052167ef2c1c1bfb3aac7d",
-    "hash": "sha256-KI8ioz2jO6syW4m+5celXL2gpIsO9dYAFP+573fs6zc="
+    "rev": "85d4970caed3e45be9de56c3058c334379fc4894",
+    "hash": "sha256-/ZZmgELpTf+F5p/cqJLBBiXHwvDAzuHkjae2ix7yUxI="
   },
   "kosinkadink-animatediff-evolved": {
     "owner": "Kosinkadink",
     "repo": "ComfyUI-AnimateDiff-Evolved",
     "fetchSubmodules": false,
-    "rev": "8f7ee51ceda2e1f590cc64284e0c92ea4b252eed",
-    "hash": "sha256-/e5vV1HrSkcq8MB4OE3q5xYF5e7ZC6oqPyccEbeKUzo="
+    "rev": "2b1de6c2de94b48deb2297d799971b84a6ce63de",
+    "hash": "sha256-h2PoAaYflkw5haiM2Onp3P1ggICGWdJ1/HdyXLfJ7Eo="
   },
   "kosinkadink-video-helper-suite": {
     "owner": "Kosinkadink",
@@ -101,8 +101,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "2e47b2394c2e1bf27f15b30836b40a7f4459fa84",
-    "hash": "sha256-oNIKVFlqJeWLNJT5Aoue3k6uiopLsypOwwbQVbFYEEU="
+    "rev": "ec4a30fa1c1691355ce8eafcdc4dbffe8b55c1c6",
+    "hash": "sha256-aoaCtqBdpkEkexX9e+2nJ9R74M8M4PvvUd9X3foG2V0="
   },
   "lev145-images-grid": {
     "owner": "LEv145",
