@@ -18,6 +18,9 @@ buildExtension {
         --replace-quiet \
           'CATEGORY = "Animate Diff 🎭🅐🅓' \
           'CATEGORY = "animate_diff' \
+        --replace-quiet \
+          'CATEGORY = ""' \
+          'CATEGORY = "animate_diff/deprecated"' \
         --replace-quiet "① Gen1 nodes ①" "Gen1 nodes" \
         --replace-quiet "② Gen2 nodes ②" "Gen2 nodes" \
         --replace-quiet "◆" " - " \

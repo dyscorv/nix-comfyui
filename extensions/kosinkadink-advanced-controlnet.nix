@@ -17,6 +17,9 @@ buildExtension {
         --replace-quiet \
           'CATEGORY = "Adv-ControlNet 🛂🅐🅒🅝' \
           'CATEGORY = "adv_controlnet' \
+        --replace-quiet \
+          'CATEGORY = ""' \
+          'CATEGORY = "adv_controlnet/deprecated"' \
         --replace-quiet " 🛂🅐🅒🅝" "" \
         --replace-quiet "🛂🅐🅒🅝" "" \
         --replace-quiet "🧪" "" \
