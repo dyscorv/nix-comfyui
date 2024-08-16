@@ -38,7 +38,13 @@
     //
     inputs.flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = inputs.nixpkgs.legacyPackages."${system}";
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+
         comfyuiPackages = mkComfyuiPackages pkgs;
       in
       {

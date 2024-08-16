@@ -13,6 +13,13 @@
     "rev": "d1dcf12f1007f3067b3128361dd5729d244fb25f",
     "hash": "sha256-6FPv+UutUkI5IQpL+4FDKLq5G2/zsRXd/YtiDjK2/Pc="
   },
+  "badcafecode-execution-inversion-demo": {
+    "owner": "BadCafeCode",
+    "repo": "execution-inversion-demo-comfyui",
+    "fetchSubmodules": false,
+    "rev": "b0b489659684a1b69221db48cabb9dce5f7bb6fb",
+    "hash": "sha256-KXaMrBhmIfYxv+uXytXSh2/kei/ULICliVfg5zaJqVw="
+  },
   "comfyui": {
     "owner": "comfyanonymous",
     "repo": "ComfyUI",

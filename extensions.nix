@@ -5,6 +5,8 @@
     callPackage ./extensions/acly-inpaint.nix { };
   acly-tooling =
     callPackage ./extensions/acly-tooling.nix { };
+  badcafecode-execution-inversion-demo =
+    callPackage ./extensions/badcafecode-execution-inversion-demo.nix { };
   cubiq-instantid =
     callPackage ./extensions/cubiq-instantid.nix { };
   cubiq-ipadapter-plus =
