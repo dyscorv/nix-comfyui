@@ -17,8 +17,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "0f9c2a78224ce3179c773fe3af63722f438b0613",
-    "hash": "sha256-osRyYfysRuaA8jBnNLV7JE94NRJrzsTmSttLtjsZm8w="
+    "rev": "05a9f3faa1ac4236705681cdf5f289267f4d3b9a",
+    "hash": "sha256-gXh3reKGIT4D64shKvNQz9sndhRn8Dixpj/V6CkZgWM="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -38,8 +38,8 @@
     "owner": "Fannovel16",
     "repo": "comfyui_controlnet_aux",
     "fetchSubmodules": false,
-    "rev": "1d7cdce8cb771fbc39a432a6338168c12a338ef4",
-    "hash": "sha256-eCC3EbUQwjGtrNMhkhd+ZKw5W0Kw+yxiIk6nBptzCQM="
+    "rev": "3f716176ab698a33bd09607e285fc532f20bb63f",
+    "hash": "sha256-rB4RkiDG71ID1+44FzhUQNxNkc825L6/uRvhsu6rTdc="
   },
   "fannovel16-frame-interpolation": {
     "owner": "Fannovel16",
@@ -87,8 +87,8 @@
     "owner": "Kosinkadink",
     "repo": "ComfyUI-AnimateDiff-Evolved",
     "fetchSubmodules": false,
-    "rev": "2b1de6c2de94b48deb2297d799971b84a6ce63de",
-    "hash": "sha256-h2PoAaYflkw5haiM2Onp3P1ggICGWdJ1/HdyXLfJ7Eo="
+    "rev": "fb904a326cc66d20f60f9a474176811ae8baf210",
+    "hash": "sha256-NRdSFWvmRf7twhYOIskPqWqD/ziuMFYQra+PozUlDQU="
   },
   "kosinkadink-video-helper-suite": {
     "owner": "Kosinkadink",
@@ -101,8 +101,8 @@
     "owner": "Acly",
     "repo": "krita-ai-diffusion",
     "fetchSubmodules": true,
-    "rev": "ec4a30fa1c1691355ce8eafcdc4dbffe8b55c1c6",
-    "hash": "sha256-aoaCtqBdpkEkexX9e+2nJ9R74M8M4PvvUd9X3foG2V0="
+    "rev": "d3e1767bd95f528ffdc40d2aa18fb89f425490f7",
+    "hash": "sha256-wIDuokuuj9YRxzzmXkijMWyKnpSsZ+KZQhqA+25fuoU="
   },
   "lev145-images-grid": {
     "owner": "LEv145",
