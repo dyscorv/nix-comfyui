@@ -3,8 +3,8 @@
     "owner": "Acly",
     "repo": "comfyui-inpaint-nodes",
     "fetchSubmodules": false,
-    "rev": "69e5f2a0c2d475b83c3d4911f1786107d337bdcb",
-    "hash": "sha256-bh52JG+Zee/5p/fHbn4Ajcofp1GqiNF8WlyurauaOZs="
+    "rev": "48a8913b584b25db8a9c529be84929be66b1194e",
+    "hash": "sha256-ShD+446I69xm30+lA3NhEsKg/8NxO2rtnP+A552XraM="
   },
   "acly-tooling": {
     "owner": "Acly",
@@ -24,8 +24,8 @@
     "owner": "comfyanonymous",
     "repo": "ComfyUI",
     "fetchSubmodules": false,
-    "rev": "05a9f3faa1ac4236705681cdf5f289267f4d3b9a",
-    "hash": "sha256-gXh3reKGIT4D64shKvNQz9sndhRn8Dixpj/V6CkZgWM="
+    "rev": "14af129c5509d10504113a1520c45b0ebcf81f14",
+    "hash": "sha256-TXhE4PY+Ls4El9CNvEBItOqw4K/6N11g9Osip7qRjQI="
   },
   "cubiq-instantid": {
     "owner": "cubiq",
@@ -45,8 +45,8 @@
     "owner": "Fannovel16",
     "repo": "comfyui_controlnet_aux",
     "fetchSubmodules": false,
-    "rev": "3f716176ab698a33bd09607e285fc532f20bb63f",
-    "hash": "sha256-rB4RkiDG71ID1+44FzhUQNxNkc825L6/uRvhsu6rTdc="
+    "rev": "4cd233c5d7afe2e51bf57ee7a5ba7e6fcb9cbb22",
+    "hash": "sha256-U2ScfX0n6Dyc9TBUV5iJJfP3H/Hp0tACF6tDYOKPmFo="
   },
   "fannovel16-frame-interpolation": {
     "owner": "Fannovel16",
