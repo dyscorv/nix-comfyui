@@ -14,8 +14,8 @@ stdenv.mkDerivation {
     owner = "Acly";
     repo = "krita-ai-diffusion";
     fetchSubmodules = true;
-    rev = "d3e1767bd95f528ffdc40d2aa18fb89f425490f7";
-    hash = "sha256-wIDuokuuj9YRxzzmXkijMWyKnpSsZ+KZQhqA+25fuoU=";
+    rev = "687dba01e50aa7d8b0489d80995fbc76c7180453";
+    hash = "sha256-QtGPowmoLXxFQ+JIC+lX5VYowsMjNx1iSU/izQckrfs=";
   };
 
   nativeBuildInputs = [
