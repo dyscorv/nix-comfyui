@@ -56,6 +56,7 @@
             pkgs.just
             pkgs.nix-prefetch-git
             pkgs.nixpkgs-fmt
+            pkgs.prefetch-npm-deps
             pkgs.yapf
             (pkgs.python3.withPackages (p: [ p.nix-prefetch-github ]))
           ];

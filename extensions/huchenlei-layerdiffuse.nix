@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "huchenlei-layerdiffuse";
-  src = fetchFromGitHub sources.huchenlei-layerdiffuse;
+
+  src = fetchFromGitHub {
+    owner = "huchenlei";
+    repo = "ComfyUI-layerdiffuse";
+    fetchSubmodules = false;
+    rev = "2cbfe3972c18f3bce49d6bf9631d5fd49d9d81d0";
+    hash = "sha256-cNYPMlev7DcY9sDle8/uWGhHZSP04uoghzP20biQh9o=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.diffusers

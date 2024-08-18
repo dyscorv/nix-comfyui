@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "fannovel16-controlnet-aux";
-  src = fetchFromGitHub sources.fannovel16-controlnet-aux;
+
+  src = fetchFromGitHub {
+    owner = "Fannovel16";
+    repo = "comfyui_controlnet_aux";
+    fetchSubmodules = false;
+    rev = "4cd233c5d7afe2e51bf57ee7a5ba7e6fcb9cbb22";
+    hash = "sha256-U2ScfX0n6Dyc9TBUV5iJJfP3H/Hp0tACF6tDYOKPmFo=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.addict

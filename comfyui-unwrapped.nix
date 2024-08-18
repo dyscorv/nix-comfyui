@@ -1,4 +1,4 @@
-{ fetchFromGitHub, lib, python3, sources, writePyproject }:
+{ fetchFromGitHub, lib, python3, writePyproject }:
 
 let
   pyproject = writePyproject {
@@ -10,8 +10,16 @@ in
 
 python3.pkgs.buildPythonPackage {
   name = "comfyui-unwrapped";
+
   format = "pyproject";
-  src = fetchFromGitHub sources.comfyui;
+
+  src = fetchFromGitHub {
+    owner = "comfyanonymous";
+    repo = "ComfyUI";
+    fetchSubmodules = false;
+    rev = "14af129c5509d10504113a1520c45b0ebcf81f14";
+    hash = "sha256-TXhE4PY+Ls4El9CNvEBItOqw4K/6N11g9Osip7qRjQI=";
+  };
 
   nativeBuildInputs = [
     python3.pkgs.poetry-core

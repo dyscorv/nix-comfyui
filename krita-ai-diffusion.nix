@@ -1,4 +1,4 @@
-{ fetchFromGitHub, lib, makeWrapper, python3, sources, stdenv }:
+{ fetchFromGitHub, lib, makeWrapper, python3, stdenv }:
 
 let
   pythonpath = python3.pkgs.makePythonPath (python3.pkgs.requiredPythonModules [
@@ -9,7 +9,14 @@ in
 
 stdenv.mkDerivation {
   name = "krita-ai-diffusion";
-  src = fetchFromGitHub sources.krita-ai-diffusion;
+
+  src = fetchFromGitHub {
+    owner = "Acly";
+    repo = "krita-ai-diffusion";
+    fetchSubmodules = true;
+    rev = "d3e1767bd95f528ffdc40d2aa18fb89f425490f7";
+    hash = "sha256-wIDuokuuj9YRxzzmXkijMWyKnpSsZ+KZQhqA+25fuoU=";
+  };
 
   nativeBuildInputs = [
     makeWrapper

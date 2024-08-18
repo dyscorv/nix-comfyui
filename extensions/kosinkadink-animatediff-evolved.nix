@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "kosinkadink-animatediff-evolved";
-  src = fetchFromGitHub sources.kosinkadink-animatediff-evolved;
+
+  src = fetchFromGitHub {
+    owner = "Kosinkadink";
+    repo = "ComfyUI-AnimateDiff-Evolved";
+    fetchSubmodules = false;
+    rev = "fb904a326cc66d20f60f9a474176811ae8baf210";
+    hash = "sha256-NRdSFWvmRf7twhYOIskPqWqD/ziuMFYQra+PozUlDQU=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.einops

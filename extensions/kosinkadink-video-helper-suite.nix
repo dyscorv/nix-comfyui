@@ -1,16 +1,15 @@
-{ buildExtension
-, fetchFromGitHub
-, ffmpeg
-, gifski
-, lib
-, python3
-, sources
-, yt-dlp
-}:
+{ buildExtension, fetchFromGitHub, ffmpeg, gifski, lib, python3, yt-dlp }:
 
 buildExtension {
   name = "kosinkadink-video-helper-suite";
-  src = fetchFromGitHub sources.kosinkadink-video-helper-suite;
+
+  src = fetchFromGitHub {
+    owner = "Kosinkadink";
+    repo = "ComfyUI-VideoHelperSuite";
+    fetchSubmodules = false;
+    rev = "6bffe8b90f4464f76f1606bd93b94f1ac8d38041";
+    hash = "sha256-C5Nkrnyush5xf6yqInkSfSs/PNCpDonTlA3+HHaLsS8=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.numpy

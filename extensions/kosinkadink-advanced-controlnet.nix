@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "kosinkadink-advanced-controlnet";
-  src = fetchFromGitHub sources.kosinkadink-advanced-controlnet;
+
+  src = fetchFromGitHub {
+    owner = "Kosinkadink";
+    repo = "ComfyUI-Advanced-ControlNet";
+    fetchSubmodules = false;
+    rev = "85d4970caed3e45be9de56c3058c334379fc4894";
+    hash = "sha256-/ZZmgELpTf+F5p/cqJLBBiXHwvDAzuHkjae2ix7yUxI=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.einops

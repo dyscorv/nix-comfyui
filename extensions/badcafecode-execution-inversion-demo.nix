@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "badcafecode-execution-inversion-demo";
-  src = fetchFromGitHub sources.badcafecode-execution-inversion-demo;
+
+  src = fetchFromGitHub {
+    owner = "BadCafeCode";
+    repo = "execution-inversion-demo-comfyui";
+    fetchSubmodules = false;
+    rev = "b0b489659684a1b69221db48cabb9dce5f7bb6fb";
+    hash = "sha256-KXaMrBhmIfYxv+uXytXSh2/kei/ULICliVfg5zaJqVw=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.torch

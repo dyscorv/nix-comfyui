@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "gourieff-reactor";
-  src = fetchFromGitHub sources.gourieff-reactor;
+
+  src = fetchFromGitHub {
+    owner = "Gourieff";
+    repo = "comfyui-reactor-node";
+    fetchSubmodules = false;
+    rev = "2832357b72d55017ec689f51e2a7738d7eabfa74";
+    hash = "sha256-nLdG2uYH3irrZzPahCk6QM9+73el93MXaBrPb1YBSnE=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.importlib-metadata

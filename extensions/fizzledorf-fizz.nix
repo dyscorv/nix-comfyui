@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "fizzledorf-fizz";
-  src = fetchFromGitHub sources.fizzledorf-fizz;
+
+  src = fetchFromGitHub {
+    owner = "FizzleDorf";
+    repo = "ComfyUI_FizzNodes";
+    fetchSubmodules = false;
+    rev = "0e30c12400064de068ab599b045b430e3c0ff3cf";
+    hash = "sha256-FklAx1yN88+TTT0h1SPw4FVMN3XXDgGlTWaVDjczK5k=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.numexpr

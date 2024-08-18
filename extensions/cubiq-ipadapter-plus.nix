@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "cubiq-ipadapter-plus";
-  src = fetchFromGitHub sources.cubiq-ipadapter-plus;
+
+  src = fetchFromGitHub {
+    owner = "cubiq";
+    repo = "ComfyUI_IPAdapter_plus";
+    fetchSubmodules = false;
+    rev = "ce9b62165b89fbf8dd3be61057d62a5f8bc29e19";
+    hash = "sha256-SFAmwwdDXSplvxgmulszSVTg8GsdpCntGxKWvMMSIQI=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.einops

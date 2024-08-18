@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "cubiq-instantid";
-  src = fetchFromGitHub sources.cubiq-instantid;
+
+  src = fetchFromGitHub {
+    owner = "cubiq";
+    repo = "ComfyUI_InstantID";
+    fetchSubmodules = false;
+    rev = "6d95aa6758e58dab550725e59dcefbd426c160c7";
+    hash = "sha256-6WOJ8wSwrVaFYERmmJJA/em/AcBrqeGaJ1fgLHxEwRs=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.insightface

@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "ssitu-ultimate-sd-upscale";
-  src = fetchFromGitHub sources.ssitu-ultimate-sd-upscale;
+
+  src = fetchFromGitHub {
+    owner = "ssitu";
+    repo = "ComfyUI_UltimateSDUpscale";
+    fetchSubmodules = true;
+    rev = "70083f5d449c498ee0fb35f5293c91cebac4b758";
+    hash = "sha256-/DdjDkqSI9OkNOavYeTqjLwfrjLTx3mvTZapi4snXjc=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.numpy

@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "acly-tooling";
-  src = fetchFromGitHub sources.acly-tooling;
+
+  src = fetchFromGitHub {
+    owner = "Acly";
+    repo = "comfyui-tooling-nodes";
+    fetchSubmodules = false;
+    rev = "d1dcf12f1007f3067b3128361dd5729d244fb25f";
+    hash = "sha256-6FPv+UutUkI5IQpL+4FDKLq5G2/zsRXd/YtiDjK2/Pc=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.aiohttp

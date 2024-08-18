@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "kijai-ic-light";
-  src = fetchFromGitHub sources.kijai-ic-light;
+
+  src = fetchFromGitHub {
+    owner = "kijai";
+    repo = "ComfyUI-IC-Light";
+    fetchSubmodules = false;
+    rev = "476303a5a9926e7cf61b2b18567a416d0bdd8d8c";
+    hash = "sha256-5s2liguOHNwIV9PywFCCbYzROd6KscwYtk+RHEAmPFs=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.numpy

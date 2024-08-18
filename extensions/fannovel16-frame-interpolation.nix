@@ -1,8 +1,15 @@
-{ buildExtension, fetchFromGitHub, lib, python3, sources }:
+{ buildExtension, fetchFromGitHub, lib, python3 }:
 
 buildExtension {
   name = "fannovel16-frame-interpolation";
-  src = fetchFromGitHub sources.fannovel16-frame-interpolation;
+
+  src = fetchFromGitHub {
+    owner = "Fannovel16";
+    repo = "ComfyUI-Frame-Interpolation";
+    fetchSubmodules = false;
+    rev = "483dfe64465369e077d351ed2f1acbf7dc046864";
+    hash = "sha256-EyuWpnuGhlfq0Y51BJEvcF8grOhTT+RuItPouwS7cAI=";
+  };
 
   propagatedBuildInputs = [
     python3.pkgs.cupy-cuda12x
