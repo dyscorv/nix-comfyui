@@ -1,6 +1,7 @@
 { comfyui-unwrapped
 , commandLineArgs
 , extensions
+, frontend
 , lib
 , makeBinaryWrapper
 , python3
@@ -50,6 +51,12 @@ stdenv.mkDerivation {
 
     "--add-flags"
     "${comfyui-unwrapped}/${sitePackages}/main.py"
+
+    "--add-flags"
+    "--front-end-root"
+
+    "--add-flags"
+    "${frontend}/share/comfyui/web"
   ]
   ++
   lib.flatten (map (arg: [ "--add-flags" arg ]) commandLineArgs);

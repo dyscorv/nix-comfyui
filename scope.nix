@@ -106,9 +106,12 @@ pkgs.lib.makeScope pkgs.newScope (self: {
 
   comfyui-unwrapped = self.callPackage ./comfyui-unwrapped.nix { };
 
+  comfyui-frontend = self.callPackage ./comfyui-frontend.nix { };
+
   comfyui = self.callPackage ./comfyui.nix {
     commandLineArgs = [ ];
     extensions = [ ];
+    frontend = self.comfyui-frontend;
   };
 
   buildExtension = self.callPackage ./build-extension.nix { };

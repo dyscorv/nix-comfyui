@@ -61,7 +61,7 @@ python3.pkgs.buildPythonPackage {
         'os.path.join(base_path, "custom_nodes")' \
         'os.getenv("NIX_COMFYUI_CUSTOM_NODES", os.path.join(os.getcwd(), "custom_nodes"))'
 
-    rm --force --recursive .ci script_examples tests-unit
+    rm --force --recursive .ci script_examples tests-unit web
   '';
 
   pythonImportsCheck = [
