@@ -19,6 +19,11 @@ jobs:
 
           if ! git diff --quiet; then
             nix develop --command just fmt
+
+            nix build --out-link result-comfyui-frontend --quiet .#comfyui-frontend
+            nix store gc --quiet
+            nix build --out-link result-python3.pkgs.torch --quiet .#python3.pkgs.torch
+            nix store gc --quiet
             nix flake check --quiet
 
             git config user.name "github-actions[bot]"
