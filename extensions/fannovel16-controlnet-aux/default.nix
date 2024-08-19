@@ -38,16 +38,12 @@ buildExtension {
     python3.pkgs.yapf
   ];
 
-  prePatch = ''
-    substituteInPlace utils.py \
-      --replace-fail \
-        'annotator_ckpts_path = str(Path(here, "./ckpts"))' \
-        'import folder_paths; annotator_ckpts_path = str(Path(folder_paths.models_dir) / "controlnet_aux" / "ckpts")' \
-      --replace-fail \
-        'TEMP_DIR = tempfile.gettempdir()' \
-        'import folder_paths; TEMP_DIR = str(Path(folder_paths.models_dir) / "controlnet_aux" / "temp")'
+  patches = [
+    ./0001-fix-paths.patch
+  ];
 
-    find -type f -name "*.py" | while IFS= read -r filename; do
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
         --replace-quiet \
           'CATEGORY = "ControlNet Preprocessors' \

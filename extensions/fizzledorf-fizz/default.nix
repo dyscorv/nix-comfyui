@@ -18,22 +18,20 @@ buildExtension {
     python3.pkgs.torch
   ];
 
-  prePatch = ''
-    substituteInPlace __init__.py \
-      --replace-fail \
-        "os.path.exists(extentions_folder)" \
-        True \
-      --replace-fail \
-        "result.left_only or result.diff_files" \
-        False
+  patches = [
+    ./0001-fix-paths.patch
+  ];
 
-    find -type f -name "*.py" | while IFS= read -r filename; do
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
+      sed --in-place \
+        "s/[[:space:]]*📅🅕🅝[[:space:]]*//g" \
+        -- "$filename"
+
       substituteInPlace "$filename" \
         --replace-quiet \
-          'CATEGORY = "FizzNodes 📅🅕🅝' \
-          'CATEGORY = "fizz_nodes' \
-        --replace-quiet " 📅🅕🅝" "" \
-        --replace-quiet "📅🅕🅝" ""
+          'CATEGORY = "FizzNodes' \
+          'CATEGORY = "fizz_nodes'
     done
   '';
 

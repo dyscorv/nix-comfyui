@@ -1,0 +1,26 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Mon, 19 Aug 2024 00:00:00 +0000
+Subject: [PATCH] fix-paths
+
+
+diff --git a/__init__.py b/__init__.py
+index 8c749ad..1909cd5 100644
+--- a/__init__.py
++++ b/__init__.py
+@@ -15,13 +15,13 @@ extentions_folder = os.path.join(os.path.dirname(os.path.realpath(__main__.__fil
+                                  "web" + os.sep + "extensions" + os.sep + "FizzleDorf")
+ javascript_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "javascript")
+ 
+-if not os.path.exists(extentions_folder):
++if False:
+     print('Making the "web\extensions\FizzleDorf" folder')
+     os.makedirs(extentions_folder)
+ 
+ result = filecmp.dircmp(javascript_folder, extentions_folder)
+ 
+-if result.left_only or result.diff_files:
++if False:
+     print('Update to javascripts files detected')
+     file_list = list(result.left_only)
+     file_list.extend(x for x in result.diff_files if x not in file_list)

@@ -104,9 +104,9 @@ pkgs.lib.makeScope pkgs.newScope (self: {
     )
     { };
 
-  comfyui-unwrapped = self.callPackage ./comfyui-unwrapped.nix { };
+  comfyui-unwrapped = self.callPackage ./comfyui-unwrapped { };
 
-  comfyui-frontend = self.callPackage ./comfyui-frontend.nix { };
+  comfyui-frontend = self.callPackage ./comfyui-frontend { };
 
   comfyui = self.callPackage ./comfyui.nix {
     commandLineArgs = [ ];

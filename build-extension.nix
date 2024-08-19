@@ -17,9 +17,9 @@ python3.pkgs.buildPythonPackage (attrs // {
     python3.pkgs.poetry-core
   ];
 
-  prePatch = ''
+  postPatch = ''
     cp ${pyproject} pyproject.toml
-    ${attrs.prePatch or ""}
+    ${attrs.postPatch or ""}
   '';
 
   passthru = {

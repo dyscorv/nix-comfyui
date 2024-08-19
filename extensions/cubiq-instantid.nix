@@ -21,11 +21,13 @@ buildExtension {
     python3.pkgs.torchvision
   ];
 
-  prePatch = ''
-    substituteInPlace InstantID.py \
-      --replace-quiet \
-        'CATEGORY = "InstantID"' \
-        'CATEGORY = "instantid"'
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
+      substituteInPlace "$filename" \
+        --replace-quiet \
+          'CATEGORY = "InstantID' \
+          'CATEGORY = "instantid'
+    done
   '';
 
   passthru = {

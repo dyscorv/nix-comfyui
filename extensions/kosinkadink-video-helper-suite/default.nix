@@ -19,28 +19,24 @@ buildExtension {
     python3.pkgs.torch
   ];
 
-  prePatch = ''
-    substituteInPlace videohelpersuite/utils.py \
-      --replace-fail \
-        '"VHS_FORCE_FFMPEG_PATH" in os.environ' \
-        True \
-      --replace-fail \
-        'os.environ.get("VHS_FORCE_FFMPEG_PATH")' \
-        '"${lib.getExe ffmpeg}"' \
-      --replace-fail \
-        'os.environ.get("VHS_GIFSKI", None)' \
-        '"${lib.getExe gifski}"' \
-      --replace-fail \
-        'os.environ.get("VHS_YTDL", None)' \
-        '"${lib.getExe yt-dlp}"'
+  patches = [
+    ./0001-subst-executables.patch
+  ];
 
-    find -type f -name "*.py" | while IFS= read -r filename; do
+  postPatch = ''
+    substituteInPlace videohelpersuite/utils.py \
+      --subst-var-by ffmpeg ${lib.getExe ffmpeg} \
+      --subst-var-by gifski ${lib.getExe gifski} \
+      --subst-var-by yt-dlp ${lib.getExe yt-dlp}
+
+    find . -type f \( -name "*.py" -o -name "*.js" \) | xargs sed --in-place \
+      "s/[[:space:]]*🎥🅥🅗🅢[[:space:]]*//g" --
+
+    find . -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
         --replace-quiet \
-          'CATEGORY = "Video Helper Suite 🎥🅥🅗🅢' \
-          'CATEGORY = "video_helper_suite' \
-        --replace-quiet " 🎥🅥🅗🅢" "" \
-        --replace-quiet "🎥🅥🅗🅢" ""
+          'CATEGORY = "Video Helper Suite' \
+          'CATEGORY = "video_helper_suite'
     done
   '';
 

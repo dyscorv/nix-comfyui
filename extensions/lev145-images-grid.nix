@@ -17,11 +17,13 @@ buildExtension {
     python3.pkgs.torch
   ];
 
-  prePatch = ''
-    substituteInPlace src/base.py \
-      --replace-quiet \
-        'CATEGORY: str = "ImagesGrid"' \
-        'CATEGORY: str = "images_grid"'
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
+      substituteInPlace "$filename" \
+        --replace-quiet \
+          'CATEGORY: str = "ImagesGrid' \
+          'CATEGORY: str = "images_grid'
+    done
   '';
 
   meta = {

@@ -6,19 +6,19 @@
   acly-tooling =
     callPackage ./extensions/acly-tooling.nix { };
   badcafecode-execution-inversion-demo =
-    callPackage ./extensions/badcafecode-execution-inversion-demo.nix { };
+    callPackage ./extensions/badcafecode-execution-inversion-demo { };
   cubiq-instantid =
     callPackage ./extensions/cubiq-instantid.nix { };
   cubiq-ipadapter-plus =
     callPackage ./extensions/cubiq-ipadapter-plus.nix { };
   fannovel16-controlnet-aux =
-    callPackage ./extensions/fannovel16-controlnet-aux.nix { };
+    callPackage ./extensions/fannovel16-controlnet-aux { };
   fannovel16-frame-interpolation =
-    callPackage ./extensions/fannovel16-frame-interpolation.nix { };
+    callPackage ./extensions/fannovel16-frame-interpolation { };
   fizzledorf-fizz =
-    callPackage ./extensions/fizzledorf-fizz.nix { };
+    callPackage ./extensions/fizzledorf-fizz { };
   gourieff-reactor =
-    callPackage ./extensions/gourieff-reactor.nix { };
+    callPackage ./extensions/gourieff-reactor { };
   huchenlei-layerdiffuse =
     callPackage ./extensions/huchenlei-layerdiffuse.nix { };
   kijai-ic-light =
@@ -28,7 +28,7 @@
   kosinkadink-animatediff-evolved =
     callPackage ./extensions/kosinkadink-animatediff-evolved.nix { };
   kosinkadink-video-helper-suite =
-    callPackage ./extensions/kosinkadink-video-helper-suite.nix { };
+    callPackage ./extensions/kosinkadink-video-helper-suite { };
   lev145-images-grid =
     callPackage ./extensions/lev145-images-grid.nix { };
   ssitu-ultimate-sd-upscale =

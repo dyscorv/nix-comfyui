@@ -1,0 +1,44 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Mon, 19 Aug 2024 00:00:00 +0000
+Subject: [PATCH] fix-paths
+
+
+diff --git a/folder_paths.py b/folder_paths.py
+index 74a7d52..0e5d4cd 100644
+--- a/folder_paths.py
++++ b/folder_paths.py
+@@ -9,7 +9,7 @@ supported_pt_extensions: set[str] = {'.ckpt', '.pt', '.bin', '.pth', '.safetenso
+ 
+ folder_names_and_paths: dict[str, tuple[list[str], set[str]]] = {}
+ 
+-base_path = os.path.dirname(os.path.realpath(__file__))
++base_path = os.getcwd()
+ models_dir = os.path.join(base_path, "models")
+ folder_names_and_paths["checkpoints"] = ([os.path.join(models_dir, "checkpoints")], supported_pt_extensions)
+ folder_names_and_paths["configs"] = ([os.path.join(models_dir, "configs")], [".yaml"])
+@@ -29,7 +29,8 @@ folder_names_and_paths["gligen"] = ([os.path.join(models_dir, "gligen")], suppor
+ 
+ folder_names_and_paths["upscale_models"] = ([os.path.join(models_dir, "upscale_models")], supported_pt_extensions)
+ 
+-folder_names_and_paths["custom_nodes"] = ([os.path.join(base_path, "custom_nodes")], set())
++_nix_comfyui_custom_nodes = os.getenv("NIX_COMFYUI_CUSTOM_NODES", os.path.join(os.getcwd(), "custom_nodes"))
++folder_names_and_paths["custom_nodes"] = ([_nix_comfyui_custom_nodes], set())
+ 
+ folder_names_and_paths["hypernetworks"] = ([os.path.join(models_dir, "hypernetworks")], supported_pt_extensions)
+ 
+@@ -37,10 +38,10 @@ folder_names_and_paths["photomaker"] = ([os.path.join(models_dir, "photomaker")]
+ 
+ folder_names_and_paths["classifiers"] = ([os.path.join(models_dir, "classifiers")], {""})
+ 
+-output_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "output")
+-temp_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "temp")
+-input_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "input")
+-user_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "user")
++output_directory = os.path.join(base_path, "output")
++temp_directory = os.path.join(base_path, "temp")
++input_directory = os.path.join(base_path, "input")
++user_directory = os.path.join(base_path, "user")
+ 
+ filename_list_cache: dict[str, tuple[list[str], dict[str, float], float]] = {}
+ 

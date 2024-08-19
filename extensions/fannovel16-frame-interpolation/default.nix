@@ -27,13 +27,12 @@ buildExtension {
     python3.pkgs.tqdm
   ];
 
-  prePatch = ''
-    substituteInPlace vfi_utils.py \
-      --replace-fail \
-        'return os.path.abspath(os.path.join(os.path.dirname(__file__), config["ckpts_path"], model_type))' \
-        'import folder_paths; return os.path.abspath(os.path.join(folder_paths.models_dir, "frame_interpolation", model_type))'
+  patches = [
+    ./0001-fix-paths.patch
+  ];
 
-    find -type f -name "*.py" | while IFS= read -r filename; do
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
         --replace-quiet \
           'CATEGORY = "ComfyUI-Frame-Interpolation' \

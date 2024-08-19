@@ -31,19 +31,22 @@ buildExtension {
     python3.pkgs.ultralytics
   ];
 
-  prePatch = ''
-    substituteInPlace r_facelib/utils/misc.py \
-      --replace-fail \
-        'os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))' \
-        'os.getcwd() + "/custom_nodes/gourieff-reactor"'
+  patches = [
+    ./0001-fix-paths.patch
+  ];
 
-    find -type f -name "*.py" | while IFS= read -r filename; do
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
         --replace-quiet \
           'CATEGORY = "🌌 ReActor' \
           'CATEGORY = "reactor' \
         --replace-quiet " 🌌 ReActor" "" \
         --replace-quiet "ReActor 🌌 " ""
+
+      sed --in-place \
+        "s/[[:space:]]*🌌[[:space:]]*//g" \
+        -- "$filename"
     done
   '';
 

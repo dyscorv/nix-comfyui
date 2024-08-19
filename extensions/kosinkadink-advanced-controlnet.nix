@@ -18,19 +18,19 @@ buildExtension {
     python3.pkgs.torch
   ];
 
-  prePatch = ''
-    find -type f -name "*.py" | while IFS= read -r filename; do
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
+      sed --in-place \
+        "s/[[:space:]]*\(🛂🅐🅒🅝\|🛂\|🧪\|🚫\)[[:space:]]*//g" \
+        -- "$filename"
+
       substituteInPlace "$filename" \
         --replace-quiet \
-          'CATEGORY = "Adv-ControlNet 🛂🅐🅒🅝' \
+          'CATEGORY = "Adv-ControlNet' \
           'CATEGORY = "adv_controlnet' \
         --replace-quiet \
           'CATEGORY = ""' \
-          'CATEGORY = "adv_controlnet/deprecated"' \
-        --replace-quiet " 🛂🅐🅒🅝" "" \
-        --replace-quiet "🛂🅐🅒🅝" "" \
-        --replace-quiet "🧪" "" \
-        --replace-quiet "🚫" ""
+          'CATEGORY = "adv_controlnet/deprecated"'
     done
   '';
 

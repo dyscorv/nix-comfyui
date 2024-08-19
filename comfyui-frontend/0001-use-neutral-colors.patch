@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Mon, 19 Aug 2024 00:00:00 +0000
+Subject: [PATCH] use-neutral-colors
+
+
+diff --git a/src/main.ts b/src/main.ts
+index e4e6644..1857ac2 100644
+--- a/src/main.ts
++++ b/src/main.ts
+@@ -13,7 +13,8 @@ import { i18n } from './i18n'
+ 
+ const ComfyUIPreset = definePreset(Aura, {
+   semantic: {
+-    primary: Aura['primitive'].blue
++    primary: Aura['primitive'].blue,
++    colorScheme: { dark: { surface: Aura['primitive'].neutral } },
+   }
+ })
+ 

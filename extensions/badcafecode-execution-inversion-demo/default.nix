@@ -15,22 +15,16 @@ buildExtension {
     python3.pkgs.torch
   ];
 
-  prePatch = ''
-    substituteInPlace __init__.py \
-      --replace-fail \
-        'setup_js()' \
-        'WEB_DIRECTORY = "./js"'
+  patches = [
+    ./0001-fix-paths.patch
+  ];
 
-    substituteInPlace components.py \
-      --replace-fail \
-        'os.path.dirname(folder_paths.__file__)' \
-        'os.getcwd()' \
-      --replace-fail \
-        'CATEGORY = "Custom Components"' \
-        'CATEGORY = "components"'
-
-    find -type f -name "*.py" | while IFS= read -r filename; do
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
+        --replace-quiet \
+          'CATEGORY = "Custom Components' \
+          'CATEGORY = "components' \
         --replace-quiet \
           'CATEGORY = "InversionDemo Nodes' \
           'CATEGORY = "inversion_demo'

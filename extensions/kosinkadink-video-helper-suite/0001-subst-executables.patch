@@ -1,0 +1,36 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Mon, 19 Aug 2024 00:00:00 +0000
+Subject: [PATCH] subst-executables
+
+
+diff --git a/videohelpersuite/utils.py b/videohelpersuite/utils.py
+index 1a5b1e8..a920c88 100644
+--- a/videohelpersuite/utils.py
++++ b/videohelpersuite/utils.py
+@@ -40,8 +40,8 @@ def ffmpeg_suitability(path):
+     return score
+ 
+ 
+-if "VHS_FORCE_FFMPEG_PATH" in os.environ:
+-    ffmpeg_path = os.environ.get("VHS_FORCE_FFMPEG_PATH")
++if True:
++    ffmpeg_path = "@ffmpeg@"
+ else:
+     ffmpeg_paths = []
+     try:
+@@ -71,12 +71,12 @@ else:
+             ffmpeg_path = ffmpeg_paths[0]
+         else:
+             ffmpeg_path = max(ffmpeg_paths, key=ffmpeg_suitability)
+-gifski_path = os.environ.get("VHS_GIFSKI", None)
++gifski_path = "@gifski@"
+ if gifski_path is None:
+     gifski_path = os.environ.get("JOV_GIFSKI", None)
+     if gifski_path is None:
+         gifski_path = shutil.which("gifski")
+-ytdl_path = os.environ.get("VHS_YTDL", None) or shutil.which('yt-dlp') \
++ytdl_path = "@yt-dlp@" or shutil.which('yt-dlp') \
+         or shutil.which('youtube-dl')
+ download_history = {}
+ def try_download_video(url):

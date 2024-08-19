@@ -53,6 +53,10 @@
         devShells.default = pkgs.mkShell {
           name = "default";
           buildInputs = [
+            pkgs.bash
+            pkgs.coreutils
+            pkgs.findutils
+            pkgs.git
             pkgs.just
             pkgs.nix-prefetch-git
             pkgs.nixpkgs-fmt

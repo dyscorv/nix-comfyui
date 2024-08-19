@@ -13,12 +13,9 @@ buildNpmPackage {
 
   npmDepsHash = "sha256-kycOWgk13ZFYmfMr6OV16oc++QQsYae+Irz+Ec2xKaw=";
 
-  prePatch = ''
-    substituteInPlace src/main.ts \
-      --replace-fail \
-        "primary: Aura['primitive'].blue" \
-        "primary: Aura['primitive'].blue, colorScheme: { dark: { surface: Aura['primitive'].neutral } }"
-  '';
+  patches = [
+    ./0001-use-neutral-colors.patch
+  ];
 
   installPhase = ''
     runHook preInstall

@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Mon, 19 Aug 2024 00:00:00 +0000
+Subject: [PATCH] fix-paths
+
+
+diff --git a/vfi_utils.py b/vfi_utils.py
+index 7504637..2392c6c 100644
+--- a/vfi_utils.py
++++ b/vfi_utils.py
+@@ -60,7 +60,8 @@ class MakeInterpolationStateList:
+         
+         
+ def get_ckpt_container_path(model_type):
+-    return os.path.abspath(os.path.join(os.path.dirname(__file__), config["ckpts_path"], model_type))
++    import folder_paths
++    return os.path.abspath(os.path.join(folder_paths.models_dir, "frame_interpolation", model_type))
+ 
+ def load_file_from_url(url, model_dir=None, progress=True, file_name=None):
+     """Load file form http url, will download models if necessary.

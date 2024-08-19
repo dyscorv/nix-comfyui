@@ -50,17 +50,12 @@ python3.pkgs.buildPythonPackage {
     python3.pkgs.typing-extensions
   ];
 
-  prePatch = ''
+  patches = [
+    ./0001-fix-paths.patch
+  ];
+
+  postPatch = ''
     cp ${pyproject} pyproject.toml
-
-    substituteInPlace folder_paths.py \
-      --replace-fail \
-        "os.path.dirname(os.path.realpath(__file__))" \
-        "os.getcwd()" \
-      --replace-fail \
-        'os.path.join(base_path, "custom_nodes")' \
-        'os.getenv("NIX_COMFYUI_CUSTOM_NODES", os.path.join(os.getcwd(), "custom_nodes"))'
-
     rm --force --recursive .ci script_examples tests-unit web
   '';
 

@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Mon, 19 Aug 2024 00:00:00 +0000
+Subject: [PATCH] fix-paths
+
+
+diff --git a/r_facelib/utils/misc.py b/r_facelib/utils/misc.py
+index 68b7fe9..f0bf970 100644
+--- a/r_facelib/utils/misc.py
++++ b/r_facelib/utils/misc.py
+@@ -8,7 +8,7 @@ from urllib.parse import urlparse
+ #import gdown
+ 
+ 
+-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
++ROOT_DIR = os.getcwd() + "/custom_nodes/gourieff-reactor"
+ 
+ 
+ def download_pretrained_models(file_ids, save_path_root):

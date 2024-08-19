@@ -18,11 +18,13 @@ buildExtension {
     python3.pkgs.torchvision
   ];
 
-  prePatch = ''
-    substituteInPlace nodes.py \
-      --replace-quiet \
-        'CATEGORY = "IC-Light"' \
-        'CATEGORY = "ic_light"'
+  postPatch = ''
+    find . -type f -name "*.py" | while IFS= read -r filename; do
+      substituteInPlace "$filename" \
+        --replace-quiet \
+          'CATEGORY = "IC-Light' \
+          'CATEGORY = "ic_light'
+    done
   '';
 
   passthru = {
