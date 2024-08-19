@@ -1192,17 +1192,17 @@ files = [
 
 [[package]]
 name = "imageio"
-version = "2.35.0"
+version = "2.35.1"
 description = "Library for reading and writing a wide range of image, video, scientific, and volumetric data formats."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "imageio-2.35.0-py3-none-any.whl", hash = "sha256:ebfb39c0ad7acf93750d7ee151664238aaa9208f202288ea6f3ca7cb0ed719c3"},
-    {file = "imageio-2.35.0.tar.gz", hash = "sha256:e88f759803d2968e19a55fa8372e9fbe12967a8598fe042d8719ca46d03f4256"},
+    {file = "imageio-2.35.1-py3-none-any.whl", hash = "sha256:6eb2e5244e7a16b85c10b5c2fe0f7bf961b40fcb9f1a9fd1bd1d2c2f8fb3cd65"},
+    {file = "imageio-2.35.1.tar.gz", hash = "sha256:4952dfeef3c3947957f6d5dedb1f4ca31c6e509a476891062396834048aeed2a"},
 ]
 
 [package.dependencies]
-numpy = "<2.0.0"
+numpy = "*"
 pillow = ">=8.3.2"
 
 [package.extras]
@@ -4281,13 +4281,13 @@ logging = ["comet", "dvclive (>=2.12.0)", "tensorboard (>=2.13.0)"]
 
 [[package]]
 name = "ultralytics-thop"
-version = "2.0.2"
+version = "2.0.3"
 description = "Ultralytics THOP package for fast computation of PyTorch model FLOPs and parameters."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics_thop-2.0.2-py3-none-any.whl", hash = "sha256:f8b991c13b78094ac7e8790f3b1c368f87994dd46bcb7e223c34bf881f48e33a"},
-    {file = "ultralytics_thop-2.0.2.tar.gz", hash = "sha256:88e58333a94e5542e3d7a3dfee27eece68eb12643fc5a807ed73c4330379fcef"},
+    {file = "ultralytics_thop-2.0.3-py3-none-any.whl", hash = "sha256:68216a9a9520730259e4735df8808245b7ac81c7f8ac03d9aa70f65454b14788"},
+    {file = "ultralytics_thop-2.0.3.tar.gz", hash = "sha256:51aacf4eb073cf745daca89b9422a443df25f5ecef5430a3643b62c822696f57"},
 ]
 
 [package.dependencies]
