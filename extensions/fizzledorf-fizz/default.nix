@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "fizzledorf-fizz";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "FizzleDorf";

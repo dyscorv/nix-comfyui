@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "badcafecode-execution-inversion-demo";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "BadCafeCode";

@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "acly-inpaint";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "Acly";

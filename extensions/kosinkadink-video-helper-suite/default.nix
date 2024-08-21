@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "kosinkadink-video-helper-suite";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "Kosinkadink";

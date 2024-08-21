@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "huchenlei-layerdiffuse";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "huchenlei";

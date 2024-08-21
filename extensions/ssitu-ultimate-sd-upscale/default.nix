@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "ssitu-ultimate-sd-upscale";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "ssitu";

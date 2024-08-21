@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "gourieff-reactor";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "Gourieff";

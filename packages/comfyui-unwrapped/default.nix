@@ -10,6 +10,7 @@ in
 
 python3.pkgs.buildPythonPackage {
   name = "comfyui-unwrapped";
+  version = "0.0.0";
 
   format = "pyproject";
 

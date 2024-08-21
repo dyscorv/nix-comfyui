@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "lev145-images-grid";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "LEv145";

@@ -32,7 +32,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
     )
     { };
 
-  dependencies = import ./dependencies.nix {
+  dependencies = import ./environment/dependencies.nix {
     inherit (self) basePython;
   };
 
@@ -46,7 +46,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
     (
       { coreutils
       , lib
-      , lockfile ? "poetry.lock"
+      , lockfile ? "environment/poetry.lock"
       , poetry
       , pyproject
       , writeShellApplication
@@ -79,9 +79,9 @@ pkgs.lib.makeScope pkgs.newScope (self: {
     )
     { };
 
-  poetrylock = ./poetry.lock;
+  poetrylock = ./environment/poetry.lock;
 
-  overrides = self.callPackage ./overrides.nix { };
+  overrides = self.callPackage ./environment/overrides.nix { };
 
   python3 = self.callPackage
     (
@@ -104,27 +104,56 @@ pkgs.lib.makeScope pkgs.newScope (self: {
     )
     { };
 
-  comfyui-unwrapped = self.callPackage ./comfyui-unwrapped { };
+  inherit (import ./packages {
+    inherit (self) callPackage comfyui-frontend;
+  })
+    check-pkgs
+    comfyui
+    comfyui-frontend
+    comfyui-unwrapped
+    krita-ai-diffusion
+    ;
 
-  comfyui-frontend = self.callPackage ./comfyui-frontend { };
+  buildExtension = self.callPackage
+    (
+      { python3, writePyproject }:
 
-  comfyui = self.callPackage ./comfyui.nix {
-    commandLineArgs = [ ];
-    extensions = [ ];
-    frontend = self.comfyui-frontend;
-  };
+      attrs:
 
-  buildExtension = self.callPackage ./build-extension.nix { };
+      let
+        pyproject = writePyproject {
+          inherit (attrs) name;
+          version = "0.0.0";
+          dependencies = { };
+        };
+      in
 
-  extensions = import ./extensions.nix {
+      python3.pkgs.buildPythonPackage (attrs // {
+        format = "pyproject";
+
+        nativeBuildInputs = [
+          python3.pkgs.poetry-core
+        ];
+
+        postPatch = ''
+          cp ${pyproject} pyproject.toml
+          ${attrs.postPatch or ""}
+        '';
+
+        passthru = {
+          originalName = attrs.name;
+        } // (attrs.passthru or { });
+      })
+    )
+    { };
+
+  extensions = import ./extensions {
     inherit (self) callPackage;
   };
 
   comfyui-with-extensions = self.comfyui.override {
     extensions = builtins.attrValues self.extensions;
   };
-
-  krita-ai-diffusion = self.callPackage ./krita-ai-diffusion.nix { };
 
   krita-with-extensions = self.callPackage
     (
@@ -145,6 +174,4 @@ pkgs.lib.makeScope pkgs.newScope (self: {
       })
     )
     { };
-
-  check-pkgs = self.callPackage ./check-pkgs.nix { };
 })

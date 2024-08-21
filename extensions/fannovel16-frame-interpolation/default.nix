@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "fannovel16-frame-interpolation";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "Fannovel16";

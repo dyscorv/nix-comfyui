@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "acly-tooling";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "Acly";

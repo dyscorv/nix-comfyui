@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "cubiq-ipadapter-plus";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "cubiq";

@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "kosinkadink-advanced-controlnet";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "Kosinkadink";

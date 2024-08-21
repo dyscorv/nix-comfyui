@@ -2,6 +2,7 @@
 
 buildExtension {
   name = "kosinkadink-animatediff-evolved";
+  version = "0.0.0";
 
   src = fetchFromGitHub {
     owner = "Kosinkadink";
