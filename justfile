@@ -19,8 +19,8 @@ fmt:
     nixpkgs-fmt .
     yapf --recursive --parallel --in-place .
 
-poetry *args:
-    nix run .#call-poetry -- "$@"
+poetry platform *args:
+    nix run .#{{ quote(platform) }}.call-poetry -- "${@:2}"
 
 prep name:
     bash scripts/patch-tool.sh prep {{ quote(name) }}
@@ -36,7 +36,7 @@ up: up-flake up-lock up-sources up-patches
 up-flake:
     nix flake update
 
-up-lock: (poetry "lock")
+up-lock: (poetry "cuda" "lock") (poetry "rocm" "lock")
 
 up-patches *names:
     bash scripts/patch-tool.sh up "$@"

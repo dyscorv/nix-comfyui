@@ -1,8 +1,8 @@
 { comfyui-unwrapped
-, dependencies
 , extensions
 , lib
 , makeBinaryWrapper
+, pyproject
 , python3
 , stdenv
 , writeText
@@ -12,7 +12,7 @@ let
   scriptDependencies =
     (map
       (name: python3.pkgs."${name}")
-      (builtins.attrNames dependencies))
+      (builtins.attrNames pyproject.passthru.content.tool.poetry.dependencies))
     ++
     [
       comfyui-unwrapped

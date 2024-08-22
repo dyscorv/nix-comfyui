@@ -1,4 +1,4 @@
-{ buildExtension, fetchFromGitHub, lib, python3 }:
+{ buildExtension, fetchFromGitHub, lib, platform, python3 }:
 
 buildExtension {
   name = "fannovel16-frame-interpolation";
@@ -13,7 +13,6 @@ buildExtension {
   };
 
   propagatedBuildInputs = [
-    python3.pkgs.cupy-cuda12x
     python3.pkgs.einops
     python3.pkgs.kornia
     python3.pkgs.numpy
@@ -26,13 +25,21 @@ buildExtension {
     python3.pkgs.torch
     python3.pkgs.torchvision
     python3.pkgs.tqdm
-  ];
+  ]
+  ++
+  (lib.optional (platform == "cuda") python3.pkgs.cupy-cuda12x)
+  ++
+  (lib.optional (platform != "cuda") python3.pkgs.taichi);
 
   patches = [
     ./0001-fix-paths.patch
   ];
 
   postPatch = ''
+    ${lib.optionalString (platform != "cuda") ''
+      printf 'ops_backend: "taichi"\n' >config.yaml
+    ''}
+
     find . -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
         --replace-quiet \
@@ -45,11 +52,14 @@ buildExtension {
     check-pkgs.ignoredModuleNames = [
       "^mysql(\\..+)?$"
       "^pyunpack$"
-      "^taichi(\\..+)?$"
       "^vapoursynth$"
       "^vfi_models(\\..+)?$"
       "^vfi_utils$"
-    ];
+    ]
+    ++
+    (lib.optional (platform == "cuda") "^taichi(\\..+)?$")
+    ++
+    (lib.optional (platform != "cuda") "^cupy(\\..+)?$");
   };
 
   meta = {

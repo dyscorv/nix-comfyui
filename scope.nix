@@ -1,108 +1,12 @@
 { pkgs, poetry2nix }:
 
-pkgs.lib.makeScope pkgs.newScope (self: {
+pkgs.lib.makeScope pkgs.newScope (self:
+(import ./environment pkgs self)
+  //
+{
   inherit poetry2nix;
 
-  basePython = pkgs.python311;
-
-  poetry = pkgs.poetry.override {
-    python3 = self.basePython;
-  };
-
   inherit (import ./toml.nix) toTOML;
-
-  writePyproject = self.callPackage
-    (
-      { toTOML, writeText }:
-      { dependencies, name, version }:
-
-      writeText "pyproject.toml"
-        (toTOML {
-          build-system = {
-            build-backend = "poetry.core.masonry.api";
-            requires = [ "poetry-core" ];
-          };
-          tool.poetry = {
-            inherit dependencies name version;
-            description = "";
-            authors = [ ];
-            packages = [{ include = "**/*"; }];
-          };
-        })
-    )
-    { };
-
-  dependencies = import ./environment/dependencies.nix {
-    inherit (self) basePython;
-  };
-
-  pyproject = self.writePyproject {
-    name = "comfyui";
-    version = "0.0.0";
-    inherit (self) dependencies;
-  };
-
-  call-poetry = self.callPackage
-    (
-      { coreutils
-      , lib
-      , lockfile ? "environment/poetry.lock"
-      , poetry
-      , pyproject
-      , writeShellApplication
-      }:
-
-      writeShellApplication {
-        name = "call-poetry";
-        runtimeInputs = [ coreutils poetry ];
-        text = ''
-          declare -r lockfile=${lib.escapeShellArg lockfile}
-
-          declare runtime_dir=
-          runtime_dir="$(mktemp --directory)"
-
-          cleanup() {
-            rm --recursive --force -- "$runtime_dir"
-          }
-          trap cleanup EXIT
-
-          cp -- ${pyproject} "$runtime_dir/pyproject.toml"
-          cp -- "$lockfile" "$runtime_dir/poetry.lock" || :
-
-          pushd -- "$runtime_dir" >/dev/null
-          poetry "$@"
-          popd >/dev/null
-
-          cp -- "$runtime_dir/poetry.lock" "$lockfile"
-        '';
-      }
-    )
-    { };
-
-  poetrylock = ./environment/poetry.lock;
-
-  overrides = self.callPackage ./environment/overrides.nix { };
-
-  python3 = self.callPackage
-    (
-      { basePython, overrides, poetry2nix, poetrylock, pyproject }:
-
-      let
-        poetryResult = poetry2nix.mkPoetryPackages {
-          inherit poetrylock pyproject;
-          # poetry2nix doesn't work well with functors.
-          overrides = x: overrides x;
-          python = basePython;
-          preferWheels = true;
-          groups = [ ];
-          checkGroups = [ ];
-          extras = [ ];
-        };
-      in
-
-      poetryResult.python
-    )
-    { };
 
   inherit (import ./packages {
     inherit (self) callPackage comfyui-frontend;
@@ -116,15 +20,15 @@ pkgs.lib.makeScope pkgs.newScope (self: {
 
   buildExtension = self.callPackage
     (
-      { python3, writePyproject }:
+      { emptyPyproject, python3 }:
 
       attrs:
 
       let
-        pyproject = writePyproject {
-          inherit (attrs) name;
-          version = "0.0.0";
-          dependencies = { };
+        pyproject = emptyPyproject.override {
+          content = {
+            tool.poetry = { inherit (attrs) name version; };
+          };
         };
       in
 

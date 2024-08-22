@@ -46,6 +46,38 @@
         };
 
         comfyuiPackages = mkComfyuiPackages pkgs;
+
+        mkPackageEntry = path:
+          {
+            name = builtins.concatStringsSep "-" path;
+            value = pkgs.lib.getAttrFromPath path comfyuiPackages;
+          };
+
+        packages = builtins.listToAttrs (pkgs.lib.flatten (
+          (map
+            (name: mkPackageEntry [ name ])
+            [ "krita-with-extensions" ])
+          ++
+          (map
+            (
+              platform:
+              (map
+                (name: mkPackageEntry [ platform name ])
+                [ "comfyui" "comfyui-with-extensions" ])
+            )
+            [ "cuda" "rocm" ])
+        ));
+
+        mkCheckPkgs = platform: pkgs.runCommand "${platform}-check-pkgs"
+          {
+            nativeBuildInputs = [
+              comfyuiPackages."${platform}".check-pkgs
+            ];
+          }
+          ''
+            check-pkgs
+            touch $out
+          '';
       in
       {
         formatter = pkgs.nixpkgs-fmt;
@@ -66,15 +98,12 @@
           ];
         };
 
-        checks = {
-          inherit (comfyuiPackages)
-            comfyui-with-extensions
-            krita-with-extensions;
+        inherit packages;
 
+        checks = packages // {
           nix-comfyui-sources = pkgs.runCommand "nix-comfyui-sources"
             {
               nativeBuildInputs = [
-                comfyuiPackages.check-pkgs
                 pkgs.just
                 pkgs.nixpkgs-fmt
                 pkgs.yapf
@@ -86,10 +115,12 @@
               just --unstable --fmt --check
               nixpkgs-fmt --check .
               yapf --recursive --parallel --diff .
-              check-pkgs
 
               touch $out
             '';
+
+          cuda-check-pkgs = mkCheckPkgs "cuda";
+          rocm-check-pkgs = mkCheckPkgs "rocm";
         };
 
         legacyPackages = comfyuiPackages;

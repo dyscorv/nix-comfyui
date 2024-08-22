@@ -1,10 +1,11 @@
-{ fetchFromGitHub, lib, python3, writePyproject }:
+{ emptyPyproject, fetchFromGitHub, lib, python3 }:
 
 let
-  pyproject = writePyproject {
-    name = "comfyui-unwrapped";
-    version = "0.0.0";
-    dependencies = { };
+  pyproject = emptyPyproject.override {
+    content = {
+      tool.poetry.name = "comfyui-unwrapped";
+      tool.poetry.version = "0.0.0";
+    };
   };
 in
 

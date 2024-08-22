@@ -4,6 +4,7 @@
 , frontend
 , lib
 , makeBinaryWrapper
+, platform
 , python3
 , stdenv
 }:
@@ -42,13 +43,6 @@ stdenv.mkDerivation {
     ":"
     "/run/opengl-driver/lib"
 
-    # Some dependencies try to dlopen() libnvrtc.so.12 at runtime, namely torch
-    # and cupy-cuda12x.
-    "--prefix"
-    "LD_LIBRARY_PATH"
-    ":"
-    "${python3.pkgs.nvidia-cuda-nvrtc-cu12}/${sitePackages}/nvidia/cuda_nvrtc/lib"
-
     "--add-flags"
     "${comfyui-unwrapped}/${sitePackages}/main.py"
 
@@ -58,6 +52,15 @@ stdenv.mkDerivation {
     "--add-flags"
     "${frontend}/share/comfyui/web"
   ]
+  ++
+  (lib.optionals (platform == "cuda") [
+    # Some dependencies try to dlopen() libnvrtc.so.12 at runtime, namely torch
+    # and cupy-cuda12x.
+    "--prefix"
+    "LD_LIBRARY_PATH"
+    ":"
+    "${python3.pkgs.nvidia-cuda-nvrtc-cu12}/${sitePackages}/nvidia/cuda_nvrtc/lib"
+  ])
   ++
   lib.flatten (map (arg: [ "--add-flags" arg ]) commandLineArgs);
 
