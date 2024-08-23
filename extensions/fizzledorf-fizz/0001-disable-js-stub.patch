@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: dyscorv <174674743+dyscorv@users.noreply.github.com>
 Date: Mon, 19 Aug 2024 00:00:00 +0000
-Subject: [PATCH] fix-paths
+Subject: [PATCH] disable-js-stub
 
 
 diff --git a/__init__.py b/__init__.py

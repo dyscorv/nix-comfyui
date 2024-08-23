@@ -5,18 +5,9 @@ Subject: [PATCH] fix-paths
 
 
 diff --git a/utils.py b/utils.py
-index cf3dd6e..6e25c39 100644
+index cf3dd6e..2acdfa8 100644
 --- a/utils.py
 +++ b/utils.py
-@@ -15,7 +15,7 @@ here = Path(__file__).parent.resolve()
- 
- config_path = Path(here, "config.yaml")
- 
--if os.path.exists(config_path):
-+if False:
-     config = yaml.load(open(config_path, "r"), Loader=yaml.FullLoader)
- 
-     annotator_ckpts_path = str(Path(here, config["annotator_ckpts_path"]))
 @@ -43,8 +43,9 @@ if os.path.exists(config_path):
              log.error("Failed to create config ckpts directory. Using default.")
              annotator_ckpts_path = str(Path(here, "./ckpts"))

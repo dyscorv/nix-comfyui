@@ -1,0 +1,31 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Fri, 23 Aug 2024 00:00:00 +0000
+Subject: [PATCH] fix-paths
+
+
+diff --git a/nsfw.py b/nsfw.py
+index 68b5f42..cce7957 100644
+--- a/nsfw.py
++++ b/nsfw.py
+@@ -79,13 +79,19 @@ class CachedModels:
+     _instance: WeakRef | None = None
+ 
+     def __init__(self):
+-        model_dir = Path(__file__).parent / "safetychecker"
++        import folder_paths
++        model_dir = Path(folder_paths.models_dir) / "safetychecker"
++        model_dir.mkdir(parents=True, exist_ok=True)
+         model_file = model_dir / "model.safetensors"
+         if not model_file.exists():
+             self.download(
+                 "https://huggingface.co/CompVis/stable-diffusion-safety-checker/resolve/refs%2Fpr%2F41/model.safetensors",
+                 target=model_file,
+             )
++        import shutil
++        ro_model_dir = Path(__file__).parent / "safetychecker"
++        for n in ["config.json", "preprocessor_config.json"]:
++            shutil.copyfile(ro_model_dir / n, model_dir / n)
+         self.feature_extractor = CLIPImageProcessor.from_pretrained(model_dir)
+         self.safety_checker = CLIPSafetyChecker.from_pretrained(model_dir)
+ 

@@ -24,6 +24,10 @@ buildExtension {
     python3.pkgs.transformers
   ];
 
+  patches = [
+    ./0001-fix-paths.patch
+  ];
+
   meta = {
     license = lib.licenses.gpl3;
   };

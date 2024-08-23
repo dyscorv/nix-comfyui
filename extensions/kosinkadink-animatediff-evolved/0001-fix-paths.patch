@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Fri, 23 Aug 2024 00:00:00 +0000
+Subject: [PATCH 1/2] fix-paths
+
+
+diff --git a/animatediff/utils_model.py b/animatediff/utils_model.py
+index 48c432b..b7bc502 100644
+--- a/animatediff/utils_model.py
++++ b/animatediff/utils_model.py
+@@ -328,13 +328,11 @@ def try_mkdir(full_path: str):
+ 
+ 
+ # register motion models folder(s)
+-folder_paths.add_model_folder_path(Folders.ANIMATEDIFF_MODELS, str(Path(__file__).parent.parent / "models"))
+ folder_paths.add_model_folder_path(Folders.ANIMATEDIFF_MODELS, str(Path(folder_paths.models_dir) / Folders.ANIMATEDIFF_MODELS))
+ add_extension_to_folder_path(Folders.ANIMATEDIFF_MODELS, folder_paths.supported_pt_extensions)
+ try_mkdir(str(Path(folder_paths.models_dir) / Folders.ANIMATEDIFF_MODELS))
+ 
+ # register motion LoRA folder(s)
+-folder_paths.add_model_folder_path(Folders.MOTION_LORA, str(Path(__file__).parent.parent / "motion_lora"))
+ folder_paths.add_model_folder_path(Folders.MOTION_LORA, str(Path(folder_paths.models_dir) / Folders.MOTION_LORA))
+ add_extension_to_folder_path(Folders.MOTION_LORA, folder_paths.supported_pt_extensions)
+ try_mkdir(str(Path(folder_paths.models_dir) / Folders.MOTION_LORA))

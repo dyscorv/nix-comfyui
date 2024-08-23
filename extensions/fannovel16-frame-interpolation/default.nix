@@ -40,6 +40,8 @@ buildExtension {
       printf 'ops_backend: "taichi"\n' >config.yaml
     ''}
 
+    rm install.py test.py
+
     find . -type f -name "*.py" | while IFS= read -r filename; do
       substituteInPlace "$filename" \
         --replace-quiet \

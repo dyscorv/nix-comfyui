@@ -58,7 +58,7 @@ python3.pkgs.buildPythonPackage {
 
   postPatch = ''
     cp ${pyproject} pyproject.toml
-    rm --force --recursive .ci script_examples tests-unit web
+    rm --force --recursive .ci script_examples tests-unit web new_updater.py
   '';
 
   pythonImportsCheck = [
@@ -68,6 +68,7 @@ python3.pkgs.buildPythonPackage {
   passthru = {
     check-pkgs.ignoredModuleNames = [
       "^intel_extension_for_pytorch$"
+      "^new_updater$"
       "^torch_directml$"
       "^xformers(\\..+)?$"
     ];

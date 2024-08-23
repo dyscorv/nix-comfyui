@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Fri, 23 Aug 2024 00:00:00 +0000
+Subject: [PATCH 2/2] subst-executables
+
+
+diff --git a/animatediff/nodes_deprecated.py b/animatediff/nodes_deprecated.py
+index 7b6759c..b7ebbb0 100644
+--- a/animatediff/nodes_deprecated.py
++++ b/animatediff/nodes_deprecated.py
+@@ -145,7 +145,7 @@ class AnimateDiffCombine_Deprecated:
+     ffmpeg_warning_already_shown = False
+     @classmethod
+     def INPUT_TYPES(s):
+-        ffmpeg_path = shutil.which("ffmpeg")
++        ffmpeg_path = "@ffmpeg@"
+         #Hide ffmpeg formats if ffmpeg isn't available
+         if ffmpeg_path is not None:
+             ffmpeg_formats = ["video/"+x[:-5] for x in folder_paths.get_filename_list(Folders.VIDEO_FORMATS)]
+@@ -248,7 +248,7 @@ class AnimateDiffCombine_Deprecated:
+             )
+         else:
+             # Use ffmpeg to save a video
+-            ffmpeg_path = shutil.which("ffmpeg")
++            ffmpeg_path = "@ffmpeg@"
+             if ffmpeg_path is None:
+                 #Should never be reachable
+                 raise ProcessLookupError("Could not find ffmpeg")

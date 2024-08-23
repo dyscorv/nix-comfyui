@@ -20,7 +20,7 @@ buildExtension {
   ];
 
   patches = [
-    ./0001-fix-paths.patch
+    ./0001-disable-js-stub.patch
   ];
 
   postPatch = ''

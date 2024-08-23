@@ -1,4 +1,4 @@
-{ buildExtension, fetchFromGitHub, lib, python3 }:
+{ buildExtension, fetchFromGitHub, ffmpeg, lib, python3 }:
 
 buildExtension {
   name = "kosinkadink-animatediff-evolved";
@@ -20,7 +20,15 @@ buildExtension {
     python3.pkgs.torchvision
   ];
 
+  patches = [
+    ./0001-fix-paths.patch
+    ./0002-subst-executables.patch
+  ];
+
   postPatch = ''
+    substituteInPlace animatediff/nodes_deprecated.py \
+      --subst-var-by ffmpeg ${lib.getExe ffmpeg}
+
     find . -type f \( -name "*.py" -o -name "*.js" \) | xargs sed --in-place \
       "s/[[:space:]]*\(🎭🅐🅓①\|🎭🅐🅓\|🎭\|🧪\|🚫\|①\|②\)[[:space:]]*//g" --
 

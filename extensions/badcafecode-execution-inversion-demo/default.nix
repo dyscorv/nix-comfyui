@@ -18,6 +18,7 @@ buildExtension {
 
   patches = [
     ./0001-fix-paths.patch
+    ./0002-use-web-directory.patch
   ];
 
   postPatch = ''

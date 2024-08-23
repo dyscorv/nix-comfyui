@@ -42,3 +42,16 @@ index 74a7d52..0e5d4cd 100644
  
  filename_list_cache: dict[str, tuple[list[str], dict[str, float], float]] = {}
  
+diff --git a/main.py b/main.py
+index 9bd9851..52b683c 100644
+--- a/main.py
++++ b/main.py
+@@ -216,7 +216,7 @@ if __name__ == "__main__":
+     server = server.PromptServer(loop)
+     q = execution.PromptQueue(server)
+ 
+-    extra_model_paths_config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "extra_model_paths.yaml")
++    extra_model_paths_config_path = os.path.join(os.getcwd(), "extra_model_paths.yaml")
+     if os.path.isfile(extra_model_paths_config_path):
+         load_extra_path_config(extra_model_paths_config_path)
+ 
