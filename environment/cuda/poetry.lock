@@ -4135,13 +4135,13 @@ files = [
 
 [[package]]
 name = "transformers"
-version = "4.44.1"
+version = "4.44.2"
 description = "State-of-the-art Machine Learning for JAX, PyTorch and TensorFlow"
 optional = false
 python-versions = ">=3.8.0"
 files = [
-    {file = "transformers-4.44.1-py3-none-any.whl", hash = "sha256:bd2642da18b4e6d29b135c17650cd7ca8e874f2d092d2eddd3ed6b71a93a155c"},
-    {file = "transformers-4.44.1.tar.gz", hash = "sha256:3b9a1a07ca65c665c7bf6109b7da76182184d10bb58d9ab14e6892e7b9e073a2"},
+    {file = "transformers-4.44.2-py3-none-any.whl", hash = "sha256:1c02c65e7bfa5e52a634aff3da52138b583fc6f263c1f28d547dc144ba3d412d"},
+    {file = "transformers-4.44.2.tar.gz", hash = "sha256:36aa17cc92ee154058e426d951684a2dab48751b35b49437896f898931270826"},
 ]
 
 [package.dependencies]
@@ -4269,13 +4269,13 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.2.79"
+version = "8.2.80"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics-8.2.79-py3-none-any.whl", hash = "sha256:ae506cc8d1b473d6eb4be04a6080a3ab0a159b47ee76c794a16e6561f8d9afb5"},
-    {file = "ultralytics-8.2.79.tar.gz", hash = "sha256:3dda7a8ed246c11019214dc4eb0b3afbb22f0b6eaf1b69d48703e4865e7acd9e"},
+    {file = "ultralytics-8.2.80-py3-none-any.whl", hash = "sha256:8d4107c32f5d5de4d9df32d413709b75f16b70a99228d6b57bb4c4367effbc78"},
+    {file = "ultralytics-8.2.80.tar.gz", hash = "sha256:003130721c68af008c462cd6ee0f3bb5fb8ef7c7c9ffca30fff3813322628ded"},
 ]
 
 [package.dependencies]
