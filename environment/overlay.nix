@@ -1,4 +1,4 @@
-{ autoPatchelfHook, basePython, ffmpeg, lib, sox }:
+{ autoPatchelfHook, basePython, ffmpeg, lib, sox, tbb_2021_11 }:
 
 final: prev:
 
@@ -92,6 +92,13 @@ in
       ];
     });
 
+  numba = lib.pipe prev.numba [
+    (ops.addBuildInputs [
+      # libtbb.so.12
+      tbb_2021_11
+    ])
+  ];
+
   opencv-contrib-python = mkFailingPackage {
     pname = "opencv-contrib-python";
     message = "Use opencv-python instead of opencv-contrib-python";
@@ -108,6 +115,16 @@ in
   };
 
   inherit (bootstrappingBase) packaging;
+
+  pixeloe = lib.pipe prev.pixeloe [
+    (ops.addBuildInputs [
+      final.setuptools
+    ])
+  ];
+
+  rembg = lib.pipe prev.rembg [
+    replaceOpenCV
+  ];
 
   sacremoses = lib.pipe prev.sacremoses [
     (ops.addBuildInputs [
@@ -165,6 +182,12 @@ in
       # libtorch_python.so
       # libtorch.so
       "${final.torch}/${sitePackages}/torch/lib"
+    ])
+  ];
+
+  wget = lib.pipe prev.wget [
+    (ops.addBuildInputs [
+      final.setuptools
     ])
   ];
 }

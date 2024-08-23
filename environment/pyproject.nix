@@ -8,10 +8,12 @@ let
       tool.poetry.dependencies = {
         python = "==${basePython.version}";
 
+        accelerate = "*";
         addict = "*";
         aiohttp = "*";
         albumentations = "*";
         argostranslate = "*";
+        colour-science = "*";
         diffusers = "*";
         einops = "*";
         filelock = "*";
@@ -22,18 +24,23 @@ let
         insightface = "*";
         kornia = "*";
         mediapipe = "*";
+        numba = "*";
         numexpr = "*";
         numpy = "*";
         omegaconf = "*";
         onnx = "*";
         onnxruntime = "*";
+        open-clip-torch = "*";
         opencv-python = "==4.7.0.72";
         packaging = "*";
         pandas = "*";
         pillow = "*";
+        pixeloe = "*";
         psutil = "*";
         python-dateutil = "*";
+        pytorch-lightning = "*";
         pyyaml = "*";
+        rembg = "*";
         requests = "*";
         safetensors = "*";
         scikit-image = "*";
@@ -49,6 +56,7 @@ let
         torchsde = "*";
         tqdm = "*";
         transformers = "*";
+        transparent-background = "*";
         trimesh = "*";
         typing-extensions = "*";
         ultralytics = "*";

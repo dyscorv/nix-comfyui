@@ -1,0 +1,60 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: dyscorv <174674743+dyscorv@users.noreply.github.com>
+Date: Fri, 23 Aug 2024 00:00:00 +0000
+Subject: [PATCH] fix-paths
+
+
+diff --git a/__init__.py b/__init__.py
+index f711d30..0b0a980 100644
+--- a/__init__.py
++++ b/__init__.py
+@@ -32,3 +32,6 @@ NODE_CLASS_MAPPINGS.update(MISC_CLASS_MAPPINGS)
+ NODE_DISPLAY_NAME_MAPPINGS.update(MISC_NAME_MAPPINGS)
+ 
+ __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
++import os
++import folder_paths
++os.environ["U2NET_HOME"] = os.path.join(folder_paths.models_dir, "u2net")
+diff --git a/image.py b/image.py
+index 69afa31..ffd506f 100644
+--- a/image.py
++++ b/image.py
+@@ -927,7 +927,8 @@ class ImagePosterize:
+         return(image,)
+ 
+ 
+-LUTS_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "luts")
++LUTS_DIR = os.path.join(folder_paths.models_dir, "luts")
++os.makedirs(LUTS_DIR, exist_ok=True)
+ # From https://github.com/yoonsikp/pycubelut/blob/master/pycubelut.py (MIT license)
+ class ImageApplyLUT:
+     @classmethod
+diff --git a/sampling.py b/sampling.py
+index 9970804..24d1e7a 100644
+--- a/sampling.py
++++ b/sampling.py
+@@ -476,7 +476,8 @@ class PlotParameters:
+         width = images.shape[2]
+         out_image = []
+ 
+-        font = ImageFont.truetype(os.path.join(FONTS_DIR, 'ShareTechMono-Regular.ttf'), min(48, int(32*(width/1024))))
++        font_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "fonts", "ShareTechMono-Regular.ttf")
++        font = ImageFont.truetype(font_path, min(48, int(32*(width/1024))))
+         text_padding = 3
+         line_height = font.getmask('Q').getbbox()[3] + font.getmetrics()[1] + text_padding*2
+         char_width = font.getbbox('M')[2]+1 # using monospace font
+diff --git a/utils.py b/utils.py
+index fa36e31..2af0040 100644
+--- a/utils.py
++++ b/utils.py
+@@ -4,7 +4,9 @@ import scipy
+ import os
+ import re
+ 
+-FONTS_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "fonts")
++import folder_paths
++FONTS_DIR = os.path.join(folder_paths.models_dir, "fonts")
++os.makedirs(FONTS_DIR, exist_ok=True)
+ 
+ # from https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+ class AnyType(str):
