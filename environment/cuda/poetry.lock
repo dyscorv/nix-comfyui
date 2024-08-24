@@ -1544,13 +1544,13 @@ pyreadline3 = {version = "*", markers = "sys_platform == \"win32\" and python_ve
 
 [[package]]
 name = "idna"
-version = "3.7"
+version = "3.8"
 description = "Internationalized Domain Names in Applications (IDNA)"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.6"
 files = [
-    {file = "idna-3.7-py3-none-any.whl", hash = "sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0"},
-    {file = "idna-3.7.tar.gz", hash = "sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"},
+    {file = "idna-3.8-py3-none-any.whl", hash = "sha256:050b4e5baadcd44d760cedbd2b8e639f2ff89bbc7a5730fcc662954303377aac"},
+    {file = "idna-3.8.tar.gz", hash = "sha256:d838c2c0ed6fced7693d5e8ab8e734d5f8fda53a039c0164afb0b82e771e3603"},
 ]
 
 [[package]]
@@ -4774,13 +4774,13 @@ zarr = ["fsspec", "zarr"]
 
 [[package]]
 name = "timm"
-version = "1.0.8"
+version = "1.0.9"
 description = "PyTorch Image Models"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "timm-1.0.8-py3-none-any.whl", hash = "sha256:2e4cf9e2224616fdb08e5f7a2972bd20e05f750236ea1f8dd53f3f326ceaee83"},
-    {file = "timm-1.0.8.tar.gz", hash = "sha256:f54a579f1cc39c43d99a4b03603e39c4cee87d4f0a08aba9c22e19064b30bf95"},
+    {file = "timm-1.0.9-py3-none-any.whl", hash = "sha256:ce5a4bac57a6cbb2be4ee35dc4ce689eede10d647e48dd1836106e2cc199693b"},
+    {file = "timm-1.0.9.tar.gz", hash = "sha256:69523aa2c34820cc6db37005302b5e42ddd60c30f476643f133ead4a8c5b5533"},
 ]
 
 [package.dependencies]
@@ -5308,13 +5308,13 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.2.80"
+version = "8.2.81"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics-8.2.80-py3-none-any.whl", hash = "sha256:8d4107c32f5d5de4d9df32d413709b75f16b70a99228d6b57bb4c4367effbc78"},
-    {file = "ultralytics-8.2.80.tar.gz", hash = "sha256:003130721c68af008c462cd6ee0f3bb5fb8ef7c7c9ffca30fff3813322628ded"},
+    {file = "ultralytics-8.2.81-py3-none-any.whl", hash = "sha256:4fca00206946df6a021ec4c3f548d1c477a864fb5002681c96d675571be83580"},
+    {file = "ultralytics-8.2.81.tar.gz", hash = "sha256:52c9362d30dae5f952166704e55494d77d0ee6fc9e97ff7a329bf6175f361a84"},
 ]
 
 [package.dependencies]

@@ -8,8 +8,8 @@ buildExtension {
     owner = "Acly";
     repo = "comfyui-tooling-nodes";
     fetchSubmodules = false;
-    rev = "d1dcf12f1007f3067b3128361dd5729d244fb25f";
-    hash = "sha256-6FPv+UutUkI5IQpL+4FDKLq5G2/zsRXd/YtiDjK2/Pc=";
+    rev = "f5ec9d830cc78ec766616627fc1951cdb4897413";
+    hash = "sha256-9s29sVNt/AZYiXGnkUDMCO0yHw+coBkbJCVnRkmt118=";
   };
 
   propagatedBuildInputs = [
