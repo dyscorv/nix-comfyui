@@ -67,17 +67,6 @@
             )
             [ "cuda" "rocm" ])
         ));
-
-        mkCheckPkgs = platform: pkgs.runCommand "${platform}-check-pkgs"
-          {
-            nativeBuildInputs = [
-              comfyuiPackages."${platform}".check-pkgs
-            ];
-          }
-          ''
-            check-pkgs
-            touch $out
-          '';
       in
       {
         formatter = pkgs.nixpkgs-fmt;
@@ -111,16 +100,12 @@
             }
             ''
               cd ${./.}
-
-              just --unstable --fmt --check
-              nixpkgs-fmt --check .
-              yapf --recursive --parallel --diff .
-
+              just check-fmt
               touch $out
             '';
 
-          cuda-check-pkgs = mkCheckPkgs "cuda";
-          rocm-check-pkgs = mkCheckPkgs "rocm";
+          cuda-run-check-pkgs = comfyuiPackages.cuda.run-check-pkgs;
+          rocm-run-check-pkgs = comfyuiPackages.rocm.run-check-pkgs;
         };
 
         legacyPackages = comfyuiPackages;

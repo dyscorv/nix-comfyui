@@ -11,6 +11,11 @@ build name:
 check:
     nix flake check --keep-going --print-build-logs --verbose
 
+check-fmt:
+    just --unstable --fmt --check
+    nixpkgs-fmt --check .
+    yapf --recursive --parallel --diff .
+
 clean:
     rm --force --recursive result*
 

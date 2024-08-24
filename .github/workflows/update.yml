@@ -15,16 +15,12 @@ jobs:
       - uses: cachix/install-nix-action@v27
       - name: Update, reformat, check, commit and push
         run: |
-          nix develop --command just up
+          nix develop --quiet --command just up
 
           if ! git diff --quiet; then
-            nix develop --command just fmt
+            nix develop --quiet --command just fmt
 
-            nix build --out-link result-comfyui-frontend --quiet .#comfyui-frontend
-            nix store gc --quiet
-            nix build --out-link result-python3.pkgs.torch --quiet .#python3.pkgs.torch
-            nix store gc --quiet
-            nix flake check --quiet
+            bash scripts/check-lowspace.sh
 
             git config user.name "github-actions[bot]"
             git config user.email \

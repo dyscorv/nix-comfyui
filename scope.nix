@@ -78,4 +78,21 @@ pkgs.lib.makeScope pkgs.newScope (self:
       })
     )
     { };
+
+  run-check-pkgs = self.callPackage
+    (
+      { check-pkgs, runCommand }:
+
+      runCommand "run-check-pkgs"
+        {
+          nativeBuildInputs = [
+            check-pkgs
+          ];
+        }
+        ''
+          check-pkgs
+          touch $out
+        ''
+    )
+    { };
 })
