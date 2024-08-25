@@ -8,8 +8,8 @@ buildExtension {
     owner = "cubiq";
     repo = "ComfyUI_essentials";
     fetchSubmodules = false;
-    rev = "635322c1e49fac6c23a56131078be45f64edc193";
-    hash = "sha256-4iBwTLIkJlcu8up/LEGx7Kwe19yHzO99rZoeHAnsCSg=";
+    rev = "138073f1b2ce1e4b13c1b7ebcc267182dc1547f3";
+    hash = "sha256-STtnVw0XOzZ9Ote22cESixF3ZMK86KWk5aqw9YzTxrA=";
   };
 
   propagatedBuildInputs = [

@@ -5,12 +5,12 @@ Subject: [PATCH] subst-executables
 
 
 diff --git a/videohelpersuite/utils.py b/videohelpersuite/utils.py
-index 1a5b1e8..a920c88 100644
+index 3feb0ac..66dca6b 100644
 --- a/videohelpersuite/utils.py
 +++ b/videohelpersuite/utils.py
-@@ -40,8 +40,8 @@ def ffmpeg_suitability(path):
-     return score
- 
+@@ -44,8 +44,8 @@ class ImageOrLatent(str):
+         return not (other == "IMAGE" or other == "LATENT" or other == "*")
+ imageOrLatent = ImageOrLatent("IMAGE")
  
 -if "VHS_FORCE_FFMPEG_PATH" in os.environ:
 -    ffmpeg_path = os.environ.get("VHS_FORCE_FFMPEG_PATH")
@@ -19,7 +19,7 @@ index 1a5b1e8..a920c88 100644
  else:
      ffmpeg_paths = []
      try:
-@@ -71,12 +71,12 @@ else:
+@@ -75,12 +75,12 @@ else:
              ffmpeg_path = ffmpeg_paths[0]
          else:
              ffmpeg_path = max(ffmpeg_paths, key=ffmpeg_suitability)
