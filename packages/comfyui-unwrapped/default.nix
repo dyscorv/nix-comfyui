@@ -19,8 +19,8 @@ python3.pkgs.buildPythonPackage {
     owner = "comfyanonymous";
     repo = "ComfyUI";
     fetchSubmodules = false;
-    rev = "6ab1e6fd4a2f7cc5945310f0ecfc11617aa9a2cb";
-    hash = "sha256-lC33tGcrQN71amc+NF+FW/0xKSe/4L7Oy1J/48IYAVc=";
+    rev = "9230f658232fd94d0beeddb94aed093a1eca82b5";
+    hash = "sha256-NUuYrjlerphLk+hEPOdhs9xvsy8opYLVS2z1jptAWRM=";
   };
 
   nativeBuildInputs = [

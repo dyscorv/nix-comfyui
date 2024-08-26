@@ -3298,13 +3298,13 @@ scipy = ">=1.1.0"
 
 [[package]]
 name = "pyparsing"
-version = "3.1.2"
+version = "3.1.4"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
 optional = false
 python-versions = ">=3.6.8"
 files = [
-    {file = "pyparsing-3.1.2-py3-none-any.whl", hash = "sha256:f9db75911801ed778fe61bb643079ff86601aca99fcae6345aa67292038fb742"},
-    {file = "pyparsing-3.1.2.tar.gz", hash = "sha256:a1bac0ce561155ecc3ed78ca94d3c9378656ad4c94c1270de543f621420f94ad"},
+    {file = "pyparsing-3.1.4-py3-none-any.whl", hash = "sha256:a6a7ee4235a3f944aa1fa2249307708f893fe5717dc603503c6c7969c070fb7c"},
+    {file = "pyparsing-3.1.4.tar.gz", hash = "sha256:f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"},
 ]
 
 [package.extras]
@@ -4574,13 +4574,13 @@ files = [
 
 [[package]]
 name = "tifffile"
-version = "2024.8.10"
+version = "2024.8.24"
 description = "Read and write TIFF files"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "tifffile-2024.8.10-py3-none-any.whl", hash = "sha256:1c224564fa92e7e9f9a0ed65880b2ece97c3f0d10029ffbebfa5e62b3f6b343d"},
-    {file = "tifffile-2024.8.10.tar.gz", hash = "sha256:fdc12124f1478a07b1524641dc6b50cf6bde0483011a63fd2a773094090c3dcf"},
+    {file = "tifffile-2024.8.24-py3-none-any.whl", hash = "sha256:40faba20cb0af05c0eb500eda63244dd81500360e1518ff4548eb61ce3943099"},
+    {file = "tifffile-2024.8.24.tar.gz", hash = "sha256:65a77e50cfcf05e3553b52dd13367caad3f88eae7f533188653ce9b2d88b7464"},
 ]
 
 [package.dependencies]
@@ -5066,13 +5066,13 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.2.81"
+version = "8.2.82"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "ultralytics-8.2.81-py3-none-any.whl", hash = "sha256:4fca00206946df6a021ec4c3f548d1c477a864fb5002681c96d675571be83580"},
-    {file = "ultralytics-8.2.81.tar.gz", hash = "sha256:52c9362d30dae5f952166704e55494d77d0ee6fc9e97ff7a329bf6175f361a84"},
+    {file = "ultralytics-8.2.82-py3-none-any.whl", hash = "sha256:edd7caa95e028752ec211baf4d6d2694db082143ec4aa6ec9779b096c74cd6f9"},
+    {file = "ultralytics-8.2.82.tar.gz", hash = "sha256:b5bd126f44b2f6232b625f24b8aa01259b527d7268fcb81f84e1c897238579b6"},
 ]
 
 [package.dependencies]
