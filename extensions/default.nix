@@ -43,4 +43,6 @@
     callPackage ./lev145-images-grid { };
   ssitu-ultimate-sd-upscale =
     callPackage ./ssitu-ultimate-sd-upscale { };
+  city96-gguf =
+    callPackage ./city96-gguf { };
 }

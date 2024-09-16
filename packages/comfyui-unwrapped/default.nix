@@ -4,14 +4,14 @@ let
   pyproject = emptyPyproject.override {
     content = {
       tool.poetry.name = "comfyui-unwrapped";
-      tool.poetry.version = "0.0.0";
+      tool.poetry.version = "0.2.2";
     };
   };
 in
 
 python3.pkgs.buildPythonPackage {
   name = "comfyui-unwrapped";
-  version = "0.0.0";
+  version = "0.2.2";
 
   format = "pyproject";
 
@@ -19,8 +19,8 @@ python3.pkgs.buildPythonPackage {
     owner = "comfyanonymous";
     repo = "ComfyUI";
     fetchSubmodules = false;
-    rev = "9230f658232fd94d0beeddb94aed093a1eca82b5";
-    hash = "sha256-NUuYrjlerphLk+hEPOdhs9xvsy8opYLVS2z1jptAWRM=";
+    rev = "v0.2.2";
+    hash = "sha256-KO6Ae7uUUNRaDLj/ScaaNcuDXnuNCv0oBYRqe/x6BRs=";
   };
 
   nativeBuildInputs = [
