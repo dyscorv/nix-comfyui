@@ -27,8 +27,6 @@
     callPackage ./fizzledorf-fizz { };
   florestefano1975-portrait-master =
     callPackage ./florestefano1975-portrait-master { };
-  gourieff-reactor =
-    callPackage ./gourieff-reactor { };
   huchenlei-layerdiffuse =
     callPackage ./huchenlei-layerdiffuse { };
   kijai-ic-light =
