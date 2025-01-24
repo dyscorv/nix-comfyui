@@ -12,8 +12,8 @@ let
     owner = "comfyanonymous";
     repo = "ComfyUI";
     fetchSubmodules = false;
-    rev = "fd5dfb812cfc9e53ff4e83534a49468b72509661";
-    hash = "sha256-0+oP8/9k4XUwqM/EHqOlgIA+kmZtC4Q7fi85yeJg/cs=";
+    rev = "55add502206ed5511a04215db4ab8f1cfa3d99ae";
+    hash = "sha256-QwdgUhOrTYD4D5lqfayoTVCwORE/I5s6NL/+iWHpOlw=";
   };
 
   shortRev = builtins.substring 0 8 src.rev;
@@ -54,10 +54,6 @@ python3.pkgs.buildPythonPackage {
     python3.pkgs.tqdm
     python3.pkgs.transformers
     python3.pkgs.typing-extensions
-  ];
-
-  patches = [
-    ./0001-fix-version.patch
   ];
 
   postPatch = ''
