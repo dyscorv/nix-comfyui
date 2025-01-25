@@ -2,14 +2,14 @@
 
 buildExtension {
   name = "gourieff-reactor";
-  version = "0.0.0";
+  version = "0.5.2-beta2";
 
   src = fetchFromGitHub {
     owner = "Gourieff";
-    repo = "comfyui-reactor-node";
+    repo = "ComfyUI-ReActor";
+    rev = "d2318ad140582c6d0b68c51df342319b502006ed";
+    hash = "sha256-NmXtoMXzqGoQk6PptN0ZsWTJajZIIFZkJvp40D/S59k=";
     fetchSubmodules = false;
-    rev = "b3d85c761c5c8d113d0ad6e8845996cc83215d29";
-    hash = "sha256-Xy0hT5NWd5+k5o8kJtHz4qXyxsBDVfLQ2iYxywgZjoY=";
   };
 
   propagatedBuildInputs = [
