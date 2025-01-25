@@ -11,7 +11,7 @@ pkgs: self:
 
   rocm = self.overrideScope (_: _: { platform = "rocm"; });
 
-  basePython = pkgs.python311;
+  basePython = pkgs.python312;
 
   poetry = pkgs.poetry.override {
     python3 = self.basePython;
